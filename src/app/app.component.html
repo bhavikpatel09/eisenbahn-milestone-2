@@ -1,0 +1,17 @@
+<!-- <div class="content" role="main">
+  <nav>
+    <ul> -->
+<!-- <li><a routerLink="age-gate">Age Gate</a></li>
+      <li><a routerLink="ask-name">Name</a></li>
+      <li><a routerLink="ask-cpf-number">CPF Document Number</a></li>
+      <li><a routerLink="ask-restaurant-details">Restaurant Details</a></li>
+      <li><a routerLink="practice-speech">Practice Speech</a></li>
+      <li><a routerLink="ready-speech">Ready Speech</a></li>
+      <li><a routerLink="voucher-details">Voucher Details</a></li> -->
+<!-- <li><a routerLink="test-speech">Test Speech</a></li> -->
+<!-- </ul>
+  </nav>
+</div> -->
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

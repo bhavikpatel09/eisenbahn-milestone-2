@@ -1,0 +1,79 @@
+<form action="#">
+  <div class="row ProductDetails">
+    <aside class="col-6 ProductBox ProductBlack">
+      <div class="text-center">
+        <button type="button" (click)="openVideoLink('https://www.youtube.com/embed/mB7RvyO4SCI')"
+          class="btn btn-img mb-0 mt-0"><img src="./assets/images/VideoButton.png" alt=""></button>
+        <div class="row d-flex align-items-center mr-1 ml-1">
+          <aside class="col-5"> <img src="./assets/images/pilsen-bottle.png" alt="" class="w-100"> </aside>
+          <aside class="col-7">
+            <div class="ProductDescription">
+              <div class="ProductLogo"> <img src="./assets/images/pilsen-logo.png" alt=""> </div>
+              <img src="./assets/images/pilsen-info.png" alt="" class="mb-4 mt-2">
+              <p>Puro malte, leve e com amargor na medida.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </aside>
+    <aside class="col-6 ProductBox ProductBlue">
+      <div class="text-center">
+        <button type="button" (click)="openVideoLink('https://www.youtube.com/embed/BDgEC4smxxI')"
+          class="btn btn-img mb-0 mt-0"><img src="./assets/images/VideoButton.png" alt=""></button>
+        <div class="row d-flex align-items-center mr-1 ml-1">
+          <aside class="col-5"> <img src="./assets/images/ipa-bottle.png" alt="" class="w-100"> </aside>
+          <aside class="col-7">
+            <div class="ProductDescription">
+              <div class="ProductLogo"> <img src="./assets/images/ipa-logo.png" alt=""> </div>
+              <img src="./assets/images/ipa-info.png" alt="" class="mb-4 mt-2">
+              <p>Amarga, com aroma intenso de lúpulo e levemente cítrica.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </aside>
+    <aside class="col-6 ProductBox ProductGreen">
+      <div class="text-center">
+        <button type="button" (click)="openVideoLink('https://www.youtube.com/embed/6RH3nriphwU')"
+          class="btn btn-img mb-0 mt-0"><img src="./assets/images/VideoButton.png" alt=""></button>
+        <div class="row d-flex align-items-center mr-1 ml-1">
+          <aside class="col-5"> <img src="./assets/images/pale-ale-bottle.png" alt="" class="w-100"> </aside>
+          <aside class="col-7">
+            <div class="ProductDescription">
+              <div class="ProductLogo"> <img src="./assets/images/pale-ale-logo.png" alt=""> </div>
+              <img src="./assets/images/pale-ale-info.png" alt="" class="mb-4 mt-2">
+              <p>Leve, com amargor e doçura equilibrados e um aroma frutado.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </aside>
+    <aside class="col-6 ProductBox ProductCream">
+      <div class="text-center">
+        <button type="button" (click)="openVideoLink('https://www.youtube.com/embed/MY0MeMwlWXk')"
+          class="btn btn-img mb-0 mt-0"><img src="./assets/images/VideoButton.png" alt=""></button>
+        <div class="row d-flex align-items-center mr-1 ml-1">
+          <aside class="col-5"> <img src="./assets/images/wiezen-bottle.png" alt="" class="w-100"> </aside>
+          <aside class="col-7">
+            <div class="ProductDescription">
+              <div class="ProductLogo"> <img src="./assets/images/wiezen-logo.png" alt=""> </div>
+              <img src="./assets/images/wiezen-info.png" alt="" class="mb-4 mt-2">
+              <p>Cremosa e especial, feita com notas de banana e cravo.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </aside>
+  </div>
+  <div class="ProductLine" style="height: 8px;;"></div>
+  <label class="control-label mt-2 mb-0 Eisenbahn-logo"><img src="./assets/images/Eisenbahn-logo.png" alt=""></label>
+  <button type="button" *ngIf="showBack" (click)="navigateBack()" class="btn btn-img mb-2 mt-0">
+    <img src="./assets/images/back-btn.png" alt=""></button>
+</form>
+
+<app-video-modal class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true" id="video-player" (closeEvent)="closingModal($event)">
+  <div class="embed-responsive embed-responsive-16by9" *ngIf="safeURL">
+    <iframe [src]='safeURL' frameborder="0" class="embed-responsive-item" allowfullscreen></iframe>
+  </div>
+</app-video-modal>

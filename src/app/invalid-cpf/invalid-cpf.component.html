@@ -1,0 +1,25 @@
+<img class="top-arrow" src="./assets/images/top-arrow-bg.png" alt="">
+<div class="container-fluid text-center">
+    <form>
+        <div class="spacer-10"></div>
+        <div class="form-group">
+            <label class="control-label color-o" style="font-size:3rem;">CPF Inválido</label>
+            <label class="control-label try-again-label" style="line-height: 1.5rem;">não conseguimos encontrar sua
+                identificação</label>
+            <div class="inputBg-gray">
+                <input class="red-bg-fcontrol" readonly type="text" [(ngModel)]="cpfNumber" aria-label="nome"
+                    name="cpfNumber" title="nome" placeholder="153.789.321.23">
+            </div>
+        </div>
+        <label class="control-label try-again-label" style="font-size: 2rem;">Digite novamente</label>
+        <div class="spacer-9"></div>
+        <button type="button" (click)="navigateBack()" class="btn btn-img"><img
+                src="./assets/images/back-btn.png" alt=""></button>
+    </form>
+</div>
+<div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>
+
+<app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    id="invalid-cpf-number" title="cpf inválido">
+    <p>Por favor, insira um número de cpf válido</p>
+</app-dialog-modal>

@@ -1,0 +1,20 @@
+<img class="top-arrow" src="./assets/images/top-arrow-bg.png" alt="">
+<div class="container-fluid text-center">
+    <form>
+        <div class="spacer-10"></div>
+        <div class="form-group">
+            <label class="control-label color-o" style="font-size: 5rem;line-height: 5rem;">ERRO!</label>
+            <br />
+            <label class="control-label" style="font-size: 1.5rem;line-height: 2rem;">{{errorMessage}}</label>
+        </div>
+        <div class="spacer-10"></div>
+        <button type="button" (click)="navigateBack()" class="btn btn-img"><img src="./assets/images/back-btn.png"
+                alt=""></button>
+    </form>
+</div>
+<div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>
+
+<app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    id="invalid-cpf-number" title="cpf inválido">
+    <p>Por favor, insira um número de cpf válido</p>
+</app-dialog-modal>

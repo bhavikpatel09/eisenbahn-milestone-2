@@ -1,0 +1,1159 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+	letter-spacing: -.5px;
+	text-transform: uppercase;
+}
+html {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	min-width: 300px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-rendering: optimizeLegibility;
+}
+::selection {
+	background: #a05d1f;
+	color: #FFF;
+	text-shadow: none;
+}
+
+::-moz-selection {
+ background: #a05d1f; /* Firefox */
+ color: #FFF;
+ text-shadow: none;
+}
+
+::-webkit-selection {
+ background: #a05d1f; /* Safari */
+ color: #FFF;
+ text-shadow: none;
+}
+a, .btn, img, button, .form-control {
+	text-decoration: none;
+	-webkit-transition: 1s ease all;
+	-o-transition: 1s ease all;
+	-moz-transition: 1s ease all;
+	-ms-transition: 1s ease all;
+	transition: 1s ease all;
+}
+p {
+	font-family: 'Helvetica Neue';
+	text-transform: none;
+	color: #b19e7a;
+	font-size: 2.5rem;
+}
+a {
+	color: #b19e7a;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+	color: #ca6c14;
+	outline: none;
+}
+:focus {
+	outline: -webkit-focus-ring-color auto 0;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+img {
+	max-width: 100%;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.container, .container-fluid {
+	position: relative;
+}
+.container-fluid {
+	padding-left: 7%;
+	padding-right: 7%;
+}
+.btn {
+	padding: 10px;
+	margin-bottom: 0;
+	font-size: 4;
+	line-height: 4rem;
+	border-radius: 0px;
+}
+button:focus, .btn:focus {
+	outline: inherit;
+	outline: inherit;
+	box-shadow: inherit !important;
+}
+.btn-lg {
+	padding: 18px 48px;
+	font-size: 4rem;
+}
+.btn-primary {
+	background: url(../images/input-bg.png) center center;
+	border: 0;
+}
+.btn-primary span {
+	font-family: 'railroad_sans_beta_01bold';
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	text-align: center;
+	text-transform: uppercase;
+}
+.btn-primary:hover, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+	background: #a05d1f;
+	outline: inherit;
+	color: #FFF;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+	background: #a05d1f;
+}
+.btn-warning {
+	color: #fff;
+	background: #3f3d3d;
+}
+.btn-warning:hover, .btn-warning.active.focus, .btn-warning.active:focus, .btn-warning.active:hover, .btn-warning:active.focus, .btn-warning:active:focus, .btn-warning:active:hover, .open>.dropdown-toggle.btn-warning.focus, .open>.dropdown-toggle.btn-warning:focus, .open>.dropdown-toggle.btn-warning:hover, .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, .btn-warning.active, .btn-warning:active, .open>.dropdown-toggle.btn-warning {
+	background: #a05d1f;
+	color: #FFF;
+}
+.btn-rounded {
+	border-radius: 2.7rem;
+}
+.btn-img {
+	background: none;
+	border: 0;
+	padding: 0;
+	margin: 2rem auto 4rem;
+	display: block;
+}
+.btn-img.active.focus, .btn-img.active:focus, .btn-img.focus, .btn-img:active.focus, .btn-img:active:focus, .btn-img:focus {
+	background: none;
+}
+.btn-img:hover img {
+}
+.spacer-2 {
+	height: 2vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-3 {
+	height: 3vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-5 {
+	height: 5vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-10 {
+	height: 10vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-15 {
+	height: 15vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-20 {
+	height: 20vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-30 {
+	height: 30vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-40 {
+	height: 40vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-50 {
+	height: 50vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-60 {
+	height: 60vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-100 {
+	height: 100vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-120 {
+	height: 120vh;
+	clear: both;
+	width: 100%;
+}
+.spacer-150 {
+	height: 150px;
+}
+/* font-face */
+@font-face {
+	font-family: 'railroad_color_gl038pincel';
+	src: url('../fonts/railroadcolorgl038-pincel-webfont.woff2') format('woff2'), url('../fonts/railroadcolorgl038-pincel-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'railroad_sans_beta_01bold';
+	src: url('../fonts/railroadsansbeta01-bold-webfont.woff2') format('woff2'), url('../fonts/railroadsansbeta01-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'railroad_textbold';
+	src: url('../fonts/railroadtext-bold-webfont.woff2') format('woff2'), url('../fonts/railroadtext-bold-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'railroad_textregular';
+	src: url('../fonts/railroadtext-regular-webfont.woff2') format('woff2'), url('../fonts/railroadtext-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Helvetica Neue';
+	src: url('../fonts/HelveticaNeue.woff2') format('woff2'), url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype'), url('../fonts/HelveticaNeue.svg#HelveticaNeue') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+/*=============== Start Form ===============*/
+.inputBg {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: calc(5rem + .76rem + 2px);
+	padding: .376rem .76rem;
+	border-radius: 2rem;
+	background: url(../images/input-bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.fControl {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 4rem;
+	border: none;
+	font-family: 'railroad_sans_beta_01bold';
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-weight: 900;
+	text-transform: uppercase;
+	text-align: center;
+}
+.form-control {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 4rem;
+	border: none;
+	font-family: 'railroad_sans_beta_01bold';
+	font-weight: 900;
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	text-transform: uppercase;
+	text-align: center;
+}
+textarea.form-control {
+	height: inherit;
+	padding: 12px 16px;
+}
+.form-control:focus {
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	background: rgba(71,66,93,0.20);
+	border: 1px solid rgba(71,66,93,0.40);
+}
+.form-control::placeholder {
+ color: #FFF;
+ opacity: 1;
+}
+ .form-control:-ms-input-placeholder {
+ color:#FFF;
+}
+ .form-control::-ms-input-placeholder {
+ color: #FFF;
+}
+.control-label {
+	font-family: 'railroad_sans_beta_01bold';
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 4rem;
+	display: block;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+.control-label span {
+	margin-left: 1rem;
+	margin-right: 1.5rem;
+}
+.label-lg {
+	font-size: 5.7rem;
+	display: block;
+	line-height: 5.8rem;
+}
+.label-md {
+	font-size: 4.5rem;
+	display: block;
+	line-height: 4.8rem;
+}
+.label-sm {
+	font-size: 3.5rem;
+}
+.label-xs {
+	font-size: 4.5rem;
+	line-height: 4.8rem;
+}
+.color-o {
+	background: url(../images/text-bg-orange.png) left -5rem;
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+.colorDark-o {
+	background: url(../images/input-bg.png) left top;
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+.color-w {
+	background: url(../images/text-bg.jpg) left top;
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+.form-group {
+	margin-bottom: 1.5rem;
+}
+ input.form-control:-internal-autofill-selected {
+ background-color: inherit !important;
+}
+sup {
+	color: #eb0909;
+}
+select.form-control:not([size]):not([multiple]) {
+	height: calc(3.25rem + 2px);
+}
+.select-wrapper select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	font-family: 'railroad_sans_beta_01bold';
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 4rem;
+	width: 100%;
+	border: 0;
+	text-align: center;
+	padding-right: 15%;
+	position: relative;
+	z-index: 9;
+	text-transform: uppercase;
+}
+.select-wrapper select:focus {
+	border: 0;
+}
+.select-wrapper {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: calc(6rem + .76rem + 2px);
+	padding: .376rem .76rem;
+	border-radius: 2.7rem;
+	background: url(../images/input-bg.jpg);
+	background-size: cover;
+	background-position: center;
+}
+.select-wrapper img {
+	position: absolute;
+	right: 6%;
+	top: 11%;
+	width: 55px;
+}
+.select-wrapper:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #000;
+	pointer-events: none;
+	font-size: 4rem;
+	background: url(../images/input-bg-w.png) left top no-repeat;
+	height: calc(6rem + .76rem + 2px);
+	width: 20%;
+	border-radius: 0rem 2.7rem 2.7rem 0rem;
+}
+ select::-ms-expand {
+ display: none;
+}
+.span_pseudo, .chiller_cb span:before, .chiller_cb span:after {
+	content: "";
+	display: inline-block;
+	background: #fff;
+	width: 0;
+	height: 0.2rem;
+	position: absolute;
+	transform-origin: 0% 0%;
+}
+.input-group-addon {
+	background: #FFF;
+	border: 0;
+	border-radius: 0;
+}
+.chiller_cb {
+	position: relative;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+}
+.chiller_cb input {
+	display: none;
+}
+.chiller_cb input:checked ~ span {
+	background: #1b222d;
+	border-color: #1b222d;
+}
+.chiller_cb input:checked ~ span:before {
+	width: 13px;
+	height: 3px;
+	transition: width 0.1s;
+	transition-delay: 0.3s;
+}
+.chiller_cb input:checked ~ span:after {
+	width: 8px;
+	height: 3px;
+	transition: width 0.1s;
+	transition-delay: 0.2s;
+}
+.chiller_cb input:disabled ~ span {
+	background: #ececec;
+	border-color: #dcdcdc;
+}
+.chiller_cb input:disabled ~ label {
+	color: #dcdcdc;
+}
+.chiller_cb input:disabled ~ label:hover {
+	cursor: default;
+}
+.chiller_cb label {
+	padding-left: 30px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+.chiller_cb span {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #DDD;
+	position: absolute;
+	left: 0;
+	transition: all 0.2s;
+	z-index: 1;
+	box-sizing: content-box;
+}
+.chiller_cb span:before {
+	transform: rotate(-55deg);
+	top: 14px;
+	left: 7px;
+}
+.chiller_cb span:after {
+	transform: rotate(35deg);
+	bottom: 8px;
+	left: 4px;
+}
+.magic-radio-group {
+	margin-top: 12px;
+	margin-bottom: 25px;
+}
+.magic-radio-group label.control-label {
+	display: inline-block;
+	margin: 0 20px 0 0;
+	font-size: 4rem;
+	color: #FFF;
+}
+.magic-radio-group span {
+	display: inline-block;
+	position: relative;
+}
+.magic-radio {
+	position: absolute;
+	display: none;
+}
+.magic-radio[disabled] {
+	cursor: not-allowed;
+}
+.magic-radio + label {
+	position: relative;
+	display: block;
+	padding-left: 33px;
+	cursor: pointer;
+	vertical-align: middle;
+	margin: 0 18px 0 0;
+	font-size: 4rem;
+	font-weight: 600;
+	color: #a05d1f;
+	line-height: 4rem;
+}
+.magic-radio + label:hover:before {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	animation-name: hover-color;
+}
+.magic-radio + label:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	content: '';
+	border: 3px solid #a05d1f;
+}
+.magic-radio + label:after {
+	position: absolute;
+	display: none;
+	content: '';
+}
+.magic-radio[disabled] + label {
+	cursor: not-allowed;
+	color: #e4e4e4;
+}
+.magic-radio[disabled] + label:hover, .magic-radio[disabled] + label:before, .magic-radio[disabled] + label:after {
+	cursor: not-allowed;
+}
+.magic-radio[disabled] + label:hover:before {
+	border: 1px solid #e4e4e4;
+	animation-name: none;
+}
+.magic-radio[disabled] + label:before {
+	border-color: #e4e4e4;
+}
+.magic-radio:checked + label:before {
+	animation-name: none;
+}
+.magic-radio:checked + label:after {
+	display: block;
+}
+.magic-radio + label:before {
+	border-radius: 50%;
+}
+.magic-radio + label:after {
+	top: 7px;
+	left: 7px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: #a05d1f;
+}
+.magic-radio:checked + label:before {
+	border: 3px solid #a05d1f;
+}
+.magic-radio:checked[disabled] + label:before {
+	border: 3px solid #FFF;
+}
+.magic-radio:checked[disabled] + label:after {
+	background: #FFF;
+}
+/*=============== End Form ===============*/
+
+
+body.tela_01, body.tela_02, body.tela_03, body.tela_04, body.tela_05, body.tela_06, body.tela_07, body.tela_08, body.tela_09 {
+	background: url(../images/bg.jpg) center center fixed;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.top-arrow {
+	position: relative;
+	top: -3px;
+	left: -3px;
+	max-width: 50%;
+}
+.MainTitle {
+	margin-bottom: 3rem;
+	margin-top: 2rem;
+}
+.bottom-bg {
+	position: relative;
+	bottom: -15px;
+}
+.bottom-bg img {
+	position: absolute;
+	width: 100%;
+}
+.top-dots-bg {
+	background: url(../images/top-dots-bg.png) left top repeat-x;
+	background-size: 30%;
+}
+.productTop {
+	position: relative;
+	margin-top: -72px;
+}
+.productTop-tela08 {
+	margin-top: -50px;
+}
+.firstorder-tela08 {
+	color: #aa8a4c;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	display: block;
+	font-family: 'Helvetica Neue';
+}
+.badge {
+	font-size: 1.8rem;
+	line-height: 2rem;
+	font-family: 'Helvetica Neue';
+	font-weight: normal;
+	padding: .4em 1em;
+}
+.badge-light {
+	background: #FFF;
+	color: #000;
+}
+.Soundwave {
+	margin-bottom: 2rem;
+}
+.ProductDetails.row {
+	margin-left: 0;
+	margin-right: 0;
+}
+.ProductBox {
+	/* padding: 2% 0 1%; */
+	padding: 1% 0 1%;
+}
+.ProductBox .text-center {
+	padding-left: 3%;
+	padding-right: 3%;
+}
+.ProductBlack {
+	background: #191512;
+}
+.ProductBlue {
+	background: #012e4d;
+}
+.ProductGreen {
+	background: #0f2500;
+}
+.ProductCream {
+	background: #e2ceab;
+}
+.ProductBox .btn-img {
+	margin: 0 auto 1rem;
+	width: 90px;
+}
+.ProductDescription p {
+	font-size: 15px;
+	color: #e9cca8;
+}
+.ProductCream .ProductDescription p {
+	color: #191512;
+}
+.ProductLogo {
+	width: 80%;
+	margin: 0 auto;
+	height: 120px;
+}
+.ProductLogo img {
+	max-width: 90%;
+	max-height: 90%;
+	margin: 0 auto;
+	align-self: flex-end;
+}
+.ProductLine {
+	width: 100%;
+	height: 16px;
+	background: url(../images/ProductLine.jpg) left center repeat-x;
+}
+.modal-content {
+	background: url(../images/text-bg-orange.png) left top no-repeat fixed;
+	background-size: cover;
+}
+.modal-title {
+	background: url(../images/text-bg.jpg) left top;
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 2.2rem;
+	line-height: 2.5rem;
+	font-family: 'railroad_sans_beta_01bold';
+	font-weight: 900;
+}
+.close {
+	opacity: inherit;
+	text-shadow: none;
+}
+.modal-header .close span {
+	background: url(../images/input-bg.png) left top;
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 4.7rem;
+	line-height: 2.5rem;
+	font-family: 'railroad_sans_beta_01bold';
+	font-weight: 900;
+}
+.modal-content p {
+	font-size: 1.4rem;
+	color: #FFF;
+	line-height: 1.8rem;
+}
+.modal-dialog-scrollable .modal-body {
+	overflow-y: auto;
+	height: 60vh;
+}
+
+/*================ Responsive CSS ================*/
+@media (max-width: 1153px) {
+.spacer-150 {
+	height: 100px;
+}
+.MainTitle img {
+	max-width: 70%;
+}
+}
+
+@media (max-width: 1023px) {
+.container-fluid {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.control-label, .fControl, .btn, .select-wrapper select {
+	font-size: 3.7rem;
+	line-height: 4rem;
+}
+.select-wrapper select {
+	line-height: 6rem;
+}
+.label-lg {
+	font-size: 5.7rem;
+	line-height: 5.8rem;
+}
+.label-md {
+	font-size: 4rem;
+	display: block;
+	line-height: 4.2rem;
+}
+p {
+	font-size: 2rem
+}
+.select-wrapper img {
+	position: absolute;
+	right: 6%;
+	top: 18%;
+	width: 7%;
+}
+.label-sm {
+	font-size: 2.8rem;
+	line-height: 3rem;
+}
+.label-sm.productTop-tela08 {
+	font-size: 2.5rem;
+}
+.label-xs {
+	font-size: 3rem;
+	line-height: 3.2rem;
+}
+.productimgTop {
+	/* max-width: 45%; */
+	max-width: 38%;
+}
+.productimgTop-tela08 {
+	max-width: 35%;
+}
+.top-dots-bg {
+	background-size: 40%;
+}
+.Eisenbahn-logo img {
+	width: 65%;
+}
+.btn-img img {
+	max-width: 60%;
+}
+}
+
+@media (max-width: 767px) {
+.MainTitle img {
+	max-width: 70%;
+}
+.btn-img img {
+	max-width: 60%;
+}
+.ProductBox .btn-img img {
+	max-width: 60%;
+}
+.control-label, .fControl, .btn, .select-wrapper select {
+	font-size: 3rem;
+	line-height: 3.3rem;
+}
+.label-lg {
+	font-size: 4.8rem;
+	line-height: 5rem;
+}
+.label-md {
+	font-size: 3.4rem;
+	display: block;
+	line-height: 3.4rem;
+}
+p {
+	font-size: 1.8rem
+}
+.select-wrapper img {
+	position: absolute;
+	right: 6%;
+	top: 18%;
+	width: 8%;
+}
+.label-sm {
+	font-size: 2.5rem;
+	line-height: 3rem;
+}
+.label-xs {
+	font-size: 3rem;
+	line-height: 3.2rem;
+}
+.productTop {
+	margin-top: -50px;
+}
+.label-sm.productTop-tela08 {
+	font-size: 2.2rem;
+	line-height: 2.5rem;
+}
+.firstorder-tela08 {
+	font-size: 1.1rem;
+}
+.badge {
+	font-size: 1.5rem;
+}
+.top-dots-bg {
+	background-size: 33%;
+}
+.spacer-150 {
+	height: 80px;
+}
+.Eisenbahn-logo img {
+	width: 60%;
+}
+}
+
+@media (max-width: 576px) {
+.MainTitle {
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+}
+.form-group {
+	margin-bottom: 1.5rem;
+}
+.btn-img {
+	margin: 1.7rem auto 3rem;
+}
+.control-label, .fControl, .btn, .select-wrapper select {
+	font-size: 2.5rem;
+	line-height: 2.8rem;
+}
+.inputBg, .select-wrapper {
+	height: calc(3rem + .76rem + 2px);
+	border-radius: 1.7rem;
+}
+.select-wrapper:before {
+	height: calc(3rem + .76rem + 2px);
+	border-radius: 0 1.7rem 1.7rem 0;
+}
+.btn-rounded {
+	border-radius: 1.7rem;
+}
+.label-lg {
+	font-size: 4rem;
+	line-height: 4.2rem;
+}
+.label-md {
+	font-size: 2.8rem;
+	display: block;
+	line-height: 3rem;
+}
+p {
+	font-size: 1.5rem
+}
+.select-wrapper img {
+	position: absolute;
+	right: 6%;
+	top: 12%;
+	width: 8%;
+}
+.label-sm {
+	font-size: 2.2rem;
+	line-height: 2.2rem;
+}
+.label-xs {
+	font-size: 2.7rem;
+	line-height: 3rem;
+}
+.productTop {
+	/* margin-top: -45px; */
+	margin-top: -1.3rem;
+}
+.label-sm.productTop-tela08 {
+	font-size: 1.8rem;
+	line-height: 2rem;
+}
+.productTop-tela08 {
+	margin-top: -40px;
+}
+.firstorder-tela08 {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
+.label-sm.productTop-tela08 {
+	font-size: 1.3rem;
+	line-height: 1.6rem;
+}
+.spacer-150 {
+	/* height: 70px; */
+	height: 44px;;
+}
+.ProductBox .btn-img {
+	width: 80px;
+}
+}
+
+@media (max-width: 481px) {
+.control-label, .fControl, .btn, .select-wrapper select {
+	font-size: 2.2rem;
+	line-height: 2.4rem;
+}
+.inputBg, .select-wrapper {
+	height: calc(2.5rem + .76rem + 2px);
+	border-radius: 1.2rem;
+}
+.select-wrapper:before {
+	height: calc(2.5rem + .76rem + 2px);
+	border-radius: 0 1.2rem 1.2rem 0;
+}
+.btn-rounded {
+	border-radius: 1.2rem;
+}
+.MainTitle {
+	margin-bottom: 1.6rem;
+	margin-top: 0.7em;
+}
+.control-label {
+	margin-bottom: 1rem;
+}
+.btn-img {
+	margin: 1.2rem auto 2rem;
+}
+.btn-img img {
+	/* max-width: 44%; */
+	max-width: 35%;
+}
+.label-lg {
+	font-size: 3.6rem;
+	line-height: 3.8rem;
+}
+.label-md {
+	/* font-size: 2.2rem; */
+	font-size: 1.9rem;
+	display: block;
+	/* line-height: 2.4rem; */
+	line-height: 1.8rem;
+}
+.label-xs {
+	font-size: 2rem;
+	/* line-height: 2.8rem; */
+	line-height: 2.2rem;
+}
+p {
+	font-size: 1.2rem
+}
+.select-wrapper img {
+	width: 7%;
+	top: 14%;
+}
+.label-sm {
+	/* font-size: 1.7rem;
+	line-height: 2rem; */
+	font-size: 1.4rem;
+    line-height: 1.5rem;
+}
+.top-dots-bg {
+	background-size: 44%;
+}
+.badge {
+	font-size: 1.2rem;
+}
+.productTop-tela08 {
+	margin-top: -20px;
+}
+.spacer-150 {
+	/* height: 60px; */
+	height: 40px;
+}
+.Soundwave {
+	margin-bottom: 0.5rem;
+}
+.ProductLogo {
+	height: 70px;
+}
+.ProductBox .btn-img {
+	width: 60px;
+}
+.ProductBox .row .col-5 {
+	padding-right: 0;
+}
+.ProductBox .row .col-7 {
+	padding-left: 0;
+}
+.ProductDescription p {
+	font-size: 13px;
+}
+}
+
+@media (max-width: 375px) {
+.control-label, .fControl, .btn {
+	font-size: 1.8rem;
+	line-height: 1.8rem;
+}
+.select-wrapper select {
+	line-height: 2.6rem;
+	font-size: 1.8rem;
+}
+.inputBg, .select-wrapper {
+	height: calc(2.5rem + .76rem + 2px);
+	border-radius: 1.2rem;
+}
+.select-wrapper:before {
+	height: calc(2.5rem + .76rem + 2px);
+	border-radius: 0 1.2rem 1.2rem 0;
+	width: 20%;
+}
+.btn-rounded {
+	border-radius: 1.2rem;
+}
+.MainTitle {
+	margin-bottom: 1.6rem;
+	margin-top: 0.7rem;
+}
+.control-label {
+	margin-bottom: 0.6rem;
+}
+.btn-img {
+	margin: 1rem auto 1.5rem;
+}
+.btn-img img {
+	max-width: 33%;
+}
+.label-lg {
+	font-size: 2.7rem;
+	line-height: 2.8rem;
+}
+.label-md {
+	font-size: 2rem;
+	display: block;
+	line-height: 2.4rem;
+}
+p {
+	font-size: 1rem
+}
+.select-wrapper img {
+	width: 10%;
+	top: 14%;
+}
+.label-sm {
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+}
+.label-xs {
+	font-size: 1.5rem;
+	line-height: 2.2rem;
+}
+.productTop {
+	margin-top: -20px;
+}
+.control-label span {
+	margin-left: 0.7rem;
+	margin-right: 1rem;
+}
+.badge {
+	font-size: 0.8rem;
+}
+.productTop-tela08 {
+	margin-top: -10px;
+}
+.label-sm.productTop-tela08 {
+	font-size: 1rem;
+	line-height: 1.2rem;
+}
+.firstorder-tela08 {
+	font-size: 0.7rem;
+	line-height: 1rem;
+}
+.mb-5, .my-5, .mb-4, .my-4, .mb-3, .my-3 {
+	margin-bottom: 1rem!important;
+}
+.spacer-150 {
+	/* height: 50px; */
+	height: 35px;
+}
+.ProductDescription p {
+	font-size: 11px;
+}
+.mt-4, .my-4 {
+	margin-top: 0.8rem!important;
+}
+.mb-4, .my-4 {
+	margin-bottom: 0.8rem!important;
+}
+}

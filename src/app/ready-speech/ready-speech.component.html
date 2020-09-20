@@ -1,0 +1,56 @@
+<!-- <p>ready-speech works!</p> -->
+
+
+<div class="top-dots-bg">
+    <div class="container-fluid text-center">
+        <form action="#">
+            <img src="./assets/images/product001.png" alt="" class="productimgTop">
+            <label class="control-label label-xs productTop" style="margin-bottom:0.5rem;font-size:1.6rem;">AGORA está valendo!</label>
+            <label class="control-label label-sm color-o">Ao pronunciar Eisenbahn,<br>
+                <span class="color-w m-0">você ganha um voucher</span><br>
+                para celebrar o mês<br>
+                das boas cervejas.</label>
+            <button type="button" *ngIf="!isProcessing" (mousedown)="startRecording($event)"
+                (mouseup)="stopRecording($event)" (touchstart)="startRecording($event)"
+                (touchend)="stopRecording($event)" class="btn btn-img mb-0 btn-record">
+                <img [src]="getRecordButtonImage()" alt=""></button>
+            <div class="lds-ring" *ngIf="isProcessing">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <label class="control-label label-sm" style="font-size: 1.1rem;">pressione e segure para falar</label>
+            <label class="control-label label-md">Ai <span class="colorDark-o">zem</span>bam</label>
+            <label class="control-label label-md">EI <span class="colorDark-o">Sen</span>bahn</label>
+        </form>
+    </div>
+</div>
+
+<app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    id="invalid-word" title="negativa">
+    <p>Desculpe!!! Você falou incorretamente!!!</p>
+</app-dialog-modal>
+
+
+<!-- 
+<div class="m-5">
+    <button class="btn btn-info" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
+    <button class="btn btn-danger" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
+    <button class="btn btn-warning" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear
+        Recording</button>
+    <br />
+    <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
+    <div>
+        <br />
+        <audio *ngIf="!isRecording && blobUrl" controls>
+            <source [src]="blobUrl" type="audio/webm">
+        </audio>
+        <br /><br />
+       </div>
+    <br />
+    <h3>
+        {{apiResponse}}
+    </h3>
+</div> -->

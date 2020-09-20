@@ -1,0 +1,24 @@
+<div class="top-dots-bg">
+    <div class="container-fluid text-center">
+        <form action="#">
+            <img src="./assets/images/product001.png" alt="" class="productimgTop">
+            <label class="control-label color-o label-sm productTop">aprenda com quem entende do assunto e aprecie uma
+                receita alemã de verdade.</label>
+            <img src="./assets/images/Eisenbahn.png" alt="" class="w-75 mb-2" style="width: 60%!important;">
+            <label class="control-label label-md">
+                <span [class.colorDark-o]="recordingTime==1" style="margin-left: 0.5rem;margin-right: 0.5rem;">Ai</span>
+                <span [class.colorDark-o]="recordingTime==2"
+                    style="margin-left: 0.5rem;margin-right: 0.5rem;">zem</span>
+                <span [class.colorDark-o]="recordingTime==3"
+                    style="margin-left: 0.5rem;margin-right: 0.5rem;">bam</span>
+            </label>
+
+            <button type="button" (click)="playSpeech()" [disabled]="isPlaying()" class="btn btn-img mt-2 mb-2"><img
+                    src="./assets/images/PlayButton.png" alt=""></button>
+            <button type="button" (click)="navigateNext()" class="btn btn-img mb-2"><img src="./assets/images/next-btn.png"
+                    alt=""></button>
+        </form>
+    </div>
+
+</div>
+<!-- <div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div> -->

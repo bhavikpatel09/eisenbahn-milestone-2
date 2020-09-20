@@ -1,0 +1,29 @@
+<img class="top-arrow" src="./assets/images/top-arrow-bg.png" alt="">
+<div class="container-fluid text-center">
+  <div class="spacer-5"></div>
+  <form action="#">
+    <div class="form-group">
+      <label class="control-label color-o">fala de onde?</label>
+      <div class="select-wrapper">
+        <select name="selectedCity" [(ngModel)]="selectedCity" (change)="onCityChange()">
+          <option [ngValue]="undefined" selected="true" [disabled]="true">cidade</option>
+          <option *ngFor="let city of cities" [ngValue]="city" [selected]="selectedCity==city">{{city.cityName}}
+          </option>
+        </select>
+        <img src="./assets/images/arrow-down.png" alt=""> </div>
+    </div>
+    <div class="spacer-5"></div>
+    <div class="form-group">
+      <label class="control-label color-o">lista de bares</label>
+      <div class="select-wrapper">
+        <select [(ngModel)]="selectedRestaurant" name="selectedRestaurant">
+          <option [ngValue]="undefined" [disabled]="true">restaurante</option>
+          <option *ngFor="let restaurant of restaurants" [ngValue]="restaurant" [selected]="selectedRestaurant==restaurant">{{restaurant.restaurantName}}
+          </option>
+        </select>
+        <img src="./assets/images/arrow-down.png" alt=""> </div>
+    </div>
+    <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img src="./assets/images/next-btn.png" alt=""></button>
+  </form>
+</div>
+<div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>

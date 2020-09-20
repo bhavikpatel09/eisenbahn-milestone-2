@@ -1,0 +1,55 @@
+<div class="top-dots-bg">
+    <div class="container-fluid text-center">
+        <div class="spacer-150"></div>
+        <form action="#">
+            <label class="control-label label-xs color-o" style="margin-bottom: 0.2rem;">que tal treinar antes do teste final?</label>
+            <label class="control-label" style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;">Tente dizer eisenbanh
+                corretamente e leve uma eisenbahn pilsen 600ML por nossa conta.</label>
+            <button *ngIf="!isProcessing" type="button" (mousedown)="startRecording($event)"
+                (mouseup)="stopRecording($event)" (touchstart)="startRecording($event)"
+                (touchend)="stopRecording($event)" class="btn btn-img mb-2 mt-2 btn-record">
+                <img [src]="getRecordButtonImage()" alt=""></button>
+
+            <div class="lds-ring" *ngIf="isProcessing">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <label class="control-label mb-1" style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;">pressione e segure para falar</label>
+
+            <label class="control-label label-xs color-o" style="font-size: 1.5rem;line-height: 2rem;"
+                *ngIf="apiResponse != ''">você disse: </label><label *ngIf="apiResponse != ''" class="control-label label-xs color-o"
+                style="font-size: 1.5rem;">{{apiResponse}}</label>
+            <div class="spacer-2"></div>
+            <label class="control-label label-md mb-1">Ai <span class="colorDark-o">zem</span>bam</label>
+            <label class="control-label label-md mb-0">EI <span class="colorDark-o">Sen</span>bahn</label>
+            <img [src]="soundwave" style="max-width: 87%;" alt="" class="Soundwave">
+
+            <label class="control-label label-xs color-o" style="font-size: 1.5rem;line-height: 1.2rem;">Estou
+                pronto!</label>
+            <button type="button" (click)="navigateNext()" class="btn btn-img mb-1"><img src="./assets/images/next-btn.png"
+                    alt=""></button>
+        </form>
+    </div>
+</div>
+<div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>
+
+
+<!-- <p>practice your speech!</p>
+<div>
+    <button class="btn btn-info" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
+    <button class="btn btn-danger" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
+    <button class="btn btn-warning" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear
+        Recording</button>
+    <br />
+    <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
+    <div>
+        <br />
+        <audio *ngIf="!isRecording && blobUrl" controls>
+            <source [src]="blobUrl" type="audio/webm">
+        </audio>
+        <br />
+    </div>
+</div> -->

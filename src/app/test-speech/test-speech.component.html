@@ -1,0 +1,14 @@
+<p>test-speech works!</p>
+<div *ngIf="isSupported">
+
+    <section>
+        <h1>{{textTo}}</h1>
+        <div *ngIf="isActive"> {{time}} </div>
+        <span id="instructions">Click to record/show your word.</span>
+        <a href="javascript:void(0);" (click)="recordSpeech()">{{speechBtnText}}</a>
+    </section>
+
+</div>
+<div *ngIf="!isSupported">
+    <h3>Not Supported</h3>
+</div>
