@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
+import { MyMaskUtil } from '../models/mask-utils';
 import { VoucherDetails } from '../models/voucher-details';
 import { ShareService } from '../services/share.service';
 
@@ -14,6 +15,9 @@ export class InvalidSpeechComponent implements OnInit {
   voucherNumber: string; //= 'INCV02102';  
   consumerParams: ConsumerParams;
   voucherDetails: VoucherDetails;
+  cpfNumber: string;
+  cpfNumberMasked: string;
+  name: string;
 
   constructor(private route: ActivatedRoute, private router: Router,
     private shareService: ShareService) { }
@@ -25,6 +29,10 @@ export class InvalidSpeechComponent implements OnInit {
     //   this.voucherNumber = this.voucherDetails?.codigo;
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    this.cpfNumber = this.consumerParams?.consumer?.documento;
+    this.cpfNumberMasked = MyMaskUtil.cpfNumberMask(this.cpfNumber);
+    this.name = this.consumerParams?.consumer?.nome;
+
     this.voucherDetails = this.shareService.getVoucherDetails();
     this.voucherNumber = this.voucherDetails?.codigo;
   }

@@ -17,6 +17,8 @@
         </div>
         <label class="control-label label-sm mt-1" style="font-size: 1.2rem;">Código para resgate do voucher</label>
       </div>
+      <label class="control-label label-sm mt-1" style="font-size: 1.2rem;" *ngIf="cpfNumber"><span class="color-o m-0">nome: </span>{{name}} <span class="color-o m-0">CPF: </span>{{cpfNumberMasked}}</label>
+      
       <label class="control-label label-sm mt-1 color-o mb-2" style="font-size: 1.2rem;">aproveite e conheça os incriveis estilos de eisenbahn</label>
       <button type="button" *ngIf="false" (click)="navigateNext()" class="btn btn-img"><img src="./assets/images/next-btn.png" alt=""></button>
       <span class="badge badge-light mt-5 mb-5" style="font-size: 0.7rem;line-height: 1rem;">APRECIE COM MODERAçÃo</span>

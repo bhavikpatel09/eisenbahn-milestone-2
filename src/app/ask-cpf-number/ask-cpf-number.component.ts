@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { City } from '../models/city';
 import { Consumer } from '../models/consumer';
 import { ConsumerParams } from '../models/consumer-params';
+import { MyMaskUtil } from '../models/mask-utils';
 import { VoucherDetails, VOUCHERSTATUS } from '../models/voucher-details';
 import { ConsumerService } from '../services/consumer.service';
 import { DialogModalService } from '../services/dialog-modal.service';
@@ -16,9 +17,11 @@ import { ShareService } from '../services/share.service';
 export class AskCpfNumberComponent implements OnInit {
   consumerParams: ConsumerParams;
   voucherDetails: VoucherDetails;
+  public cpfMask = MyMaskUtil.CPF_MASK_GENERATOR;
+  // public phoneValue01 = "12345678999";
+
 
   cpfNumber: string;
-  validSampleNumber = '111.111.111.11';
   constructor(private modalService: DialogModalService,
     private route: ActivatedRoute,
     private router: Router,
@@ -37,7 +40,9 @@ export class AskCpfNumberComponent implements OnInit {
   }
 
   navigateNext(): void {
-
+    // debugger;
+    // const val = this.cpfNumber;
+    // const valMas = this.cpfMask;
     // if (this.cpfNumber === '111.111.111.11') {
     //   this.router.navigate(['ask-restaurant-details']);
     //   return;

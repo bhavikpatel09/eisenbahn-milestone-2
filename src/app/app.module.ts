@@ -28,6 +28,7 @@ import { VoucherErrorComponent } from './voucher-error/voucher-error.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { VideoModalComponent } from './video-modal/video-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaskDirective } from './directives/mask.directive';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     VoucherAvailableComponent,
     VoucherErrorComponent,
     VideoPlayerComponent,
-    VideoModalComponent
+    VideoModalComponent,
+    MaskDirective
   ],
   imports: [
     BrowserModule,

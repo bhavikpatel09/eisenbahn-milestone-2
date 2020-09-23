@@ -19,8 +19,10 @@
       </div>
       <label class="control-label label-sm mt-1" style="font-size: 1.2rem;">Código para resgate do voucher</label>
     </div>
+    <label class="control-label label-sm mt-1" style="font-size: 1.2rem;" *ngIf="cpfNumber"><span class="color-o m-0">nome: </span>{{name}} <span class="color-o m-0">CPF: </span>{{cpfNumberMasked}}</label>
+      
     <label class="control-label label-sm mt-1" style="font-size: 1.2rem;">para conhecer mais sobre nossas cervejas, <a
-        href="javascript:void(0)" class="scroll-beer" (click)="scrollToElement()">clique aqui</a>
+        href="javascript:void(0)" class="scroll-beer " (click)="scrollToElement()">clique aqui</a>
     </label>
     <button type="button" *ngIf="false" (click)="navigateNext()" class="btn btn-img"><img
         src="./assets/images/next-btn.png" alt=""></button>

@@ -5,16 +5,24 @@
     <div class="form-group">
       <label class="control-label color-o">digite seu cpf</label>
       <div class="inputBg">
-        <input class="fControl" type="text" [(ngModel)]="cpfNumber" aria-label="nome" name="cpfNumber" title="nome" placeholder="153.789.321.23">
+        <!--<span>Phone 01 ({{ phoneValue01 }}):</span><br>
+          <input class="fControl" type="text" name="phoneValue01" [(spMaskValue)]="phoneValue01" [spMask]="cpfMask" ngModel>
+          <br><br>
+        <span style="color: white;">Phone 02 ({{ phoneValue02 }}):</span><br>
+        <input class="fControl" type="text" name="phoneValue02" [(spMaskValue)]="phoneValue02" [spMask]="phoneMask02" [spKeepMask]="true" ngModel> -->
+
+        <input class="fControl" type="text" [(spMaskValue)]="cpfNumber" [spMask]="cpfMask" ngModel ngModel
+          aria-label="nome" name="cpfNumber" title="nome" placeholder="153.789.321.23">
       </div>
     </div>
     <div class="spacer-10"></div>
-    <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img src="./assets/images/next-btn.png" alt=""></button>
+    <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img
+        src="./assets/images/next-btn.png" alt=""></button>
   </form>
 </div>
 <div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>
 
 <app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
   id="invalid-cpf-number" title="cpf inválido">
-   <p>Por favor, insira um número de cpf válido</p> 
+  <p>Por favor, insira um número de cpf válido</p>
 </app-dialog-modal>
