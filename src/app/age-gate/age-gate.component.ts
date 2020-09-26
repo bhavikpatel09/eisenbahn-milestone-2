@@ -10,6 +10,10 @@ import { DialogModalService } from '../services/dialog-modal.service';
 export class AgeGateComponent implements OnInit, OnDestroy {
   showErrorMessage = false;
   constructor(private modalService: DialogModalService, private route: ActivatedRoute, private router: Router) { }
+
+  checkboxPolicy = false;
+  isError = false;
+
   ngOnDestroy(): void {
     this.closeModal('politica-dialog');
   }
@@ -19,9 +23,21 @@ export class AgeGateComponent implements OnInit, OnDestroy {
   }
 
   navigateNext(): void {
-    this.router.navigate(['ask-name']);
+    if (this.checkboxPolicy) {
+      this.router.navigate(['ask-name']);
+    }
+    else {
+      this.isError = true;
+    }
+
   }
 
+  checkPolicyEvent(): void {
+    console.log(this.checkboxPolicy);
+    if (this.checkboxPolicy) {
+      this.isError = false;
+    }
+  }
   not18YearOld(): void {
     this.showErrorMessage = true;
   }
