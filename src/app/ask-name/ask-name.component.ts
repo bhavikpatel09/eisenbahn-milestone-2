@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
+import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -12,8 +13,13 @@ export class AskNameComponent implements OnInit {
   name: string;
   consumerParams: ConsumerParams;
 
-  constructor(private route: ActivatedRoute, private router: Router,
-    private shareService: ShareService) { }
+  constructor(private modalService: DialogModalService,
+              private route: ActivatedRoute, private router: Router,
+              private shareService: ShareService) {
+      if (!this.shareService.getPolicyAccepted()) {
+        this.modalService.open('politica-dialog-accept');
+      }
+    }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {

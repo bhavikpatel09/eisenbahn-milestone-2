@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
 import { VoucherDetails } from '../models/voucher-details';
 import { ConsumerService } from '../services/consumer.service';
+import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class ReparticipateComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private consumerService: ConsumerService,
-    private shareService: ShareService) {
+    private shareService: ShareService,
+    private modalService: DialogModalService) {
     // this.shareService.consumerParams.subscribe(consumerParams => {
     //   this.consumerParams = consumerParams;
     //   this.cpfNumber = this.consumerParams?.consumer?.documento;
@@ -31,6 +33,9 @@ export class ReparticipateComponent implements OnInit {
       this.cpfNumber = this.consumerParams?.consumer?.documento;
     }
     this.voucherDetails = this.shareService.getVoucherDetails();
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
   }
 
   ngOnInit(): void {

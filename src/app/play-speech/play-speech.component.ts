@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DialogModalService } from '../services/dialog-modal.service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-play-speech',
@@ -11,7 +13,12 @@ export class PlaySpeechComponent implements OnInit {
   private audio: any;
   private interval: any;
   recordingTime: number;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(private modalService: DialogModalService, private shareService: ShareService,
+    private route: ActivatedRoute, private router: Router) {
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
+  }
 
   ngOnInit(): void {
     this.audio = new Audio();

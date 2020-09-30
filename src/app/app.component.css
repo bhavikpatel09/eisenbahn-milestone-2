@@ -1,0 +1,8 @@
+.policy-modal{
+    position:fixed;  
+    top:auto;  
+    /* right:auto;  
+    left:auto;  */
+     bottom:0;
+     opacity: 0.8 !important;
+}

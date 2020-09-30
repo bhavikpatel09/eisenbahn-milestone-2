@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { City } from '../models/city';
 import { ConsumerParams } from '../models/consumer-params';
 import { ConsumerService } from '../services/consumer.service';
+import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -12,9 +13,14 @@ import { ShareService } from '../services/share.service';
 })
 export class AskRestaurantDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router,
-    private consumerService: ConsumerService,
-    private shareService: ShareService) { }
+  constructor(private modalService: DialogModalService,
+              private route: ActivatedRoute, private router: Router,
+              private consumerService: ConsumerService,
+              private shareService: ShareService) {
+      if (!this.shareService.getPolicyAccepted()) {
+        this.modalService.open('politica-dialog-accept');
+      }
+     }
   cities: any[];
   restaurantList: any[];
   restaurants: any[];

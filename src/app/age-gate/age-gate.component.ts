@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DialogModalService } from '../services/dialog-modal.service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-age-gate',
@@ -9,35 +10,43 @@ import { DialogModalService } from '../services/dialog-modal.service';
 })
 export class AgeGateComponent implements OnInit, OnDestroy {
   showErrorMessage = false;
-  constructor(private modalService: DialogModalService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private modalService: DialogModalService, private route: ActivatedRoute,
+    private router: Router, private shareService: ShareService) {
+    sessionStorage.clear();
+    if (!this.shareService.getPolicyAccepted()) {
+      this.openModal('politica-dialog-accept');
+    }
+  }
 
-  checkboxPolicy = false;
-  isError = false;
+  //checkboxPolicy = false;
+  //isError = false;
 
   ngOnDestroy(): void {
     this.closeModal('politica-dialog');
+    this.closeModal('politica-dialog-accept');
   }
 
   ngOnInit(): void {
-    sessionStorage.clear();
+
   }
 
   navigateNext(): void {
-    if (this.checkboxPolicy) {
-      this.router.navigate(['ask-name']);
-    }
-    else {
-      this.isError = true;
-    }
+    //if (this.checkboxPolicy) {
+    this.router.navigate(['ask-name']);
+    // }
+    // else {
+    //   this.isError = true;
+    // }
 
   }
 
-  checkPolicyEvent(): void {
-    console.log(this.checkboxPolicy);
-    if (this.checkboxPolicy) {
-      this.isError = false;
-    }
-  }
+  // checkPolicyEvent(): void {
+  //   console.log(this.checkboxPolicy);
+  //   if (this.checkboxPolicy) {
+  //     this.isError = false;
+  //   }
+  // }
+
   not18YearOld(): void {
     this.showErrorMessage = true;
   }

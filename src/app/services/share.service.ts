@@ -30,4 +30,16 @@ export class ShareService {
   getVoucherDetails(): VoucherDetails {
     return JSON.parse(sessionStorage.getItem('voucherDetails'));
   }
+  setPolicyAccepted(): void {
+    sessionStorage.setItem('policyAccepted', 'true');
+  }
+  getPolicyAccepted(): boolean {
+    const val = sessionStorage.getItem('policyAccepted');
+    if (val !== undefined && val === 'true') {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

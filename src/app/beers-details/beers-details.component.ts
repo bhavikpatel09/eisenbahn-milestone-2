@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { DialogModalService } from '../services/dialog-modal.service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-beers-details',
@@ -15,10 +16,14 @@ export class BeersDetailsComponent implements OnInit, OnDestroy {
   prevRoute: string;
 
   constructor(private _sanitizer: DomSanitizer,
-    private modalService: DialogModalService, private router: Router, private route: ActivatedRoute) {
+    private modalService: DialogModalService, private router: Router, private route: ActivatedRoute,
+    private shareService: ShareService) {
     this.route.queryParams.subscribe(params => {
       this.prevRoute = params['prevRoute'];
     });
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
   }
 
   ngOnDestroy(): void {

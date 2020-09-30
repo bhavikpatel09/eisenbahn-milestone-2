@@ -20,7 +20,11 @@ export class InvalidCpfComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private consumerService: ConsumerService,
-    private shareService: ShareService) { }
+    private shareService: ShareService) { 
+      if (!this.shareService.getPolicyAccepted()) {
+        this.modalService.open('politica-dialog-accept');
+      }
+    }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {

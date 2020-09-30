@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
 import { VoucherDetails } from '../models/voucher-details';
 import { ConsumerService } from '../services/consumer.service';
+import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -17,8 +18,12 @@ export class VoucherAvailableComponent implements OnInit {
   cpfNumber: string; //= '153.143.324.21';
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private consumerService: ConsumerService,
-    private shareService: ShareService) { }
+    private consumerService: ConsumerService,private modalService: DialogModalService,
+    private shareService: ShareService) {
+      if (!this.shareService.getPolicyAccepted()) {
+        this.modalService.open('politica-dialog-accept');
+      }
+     }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {

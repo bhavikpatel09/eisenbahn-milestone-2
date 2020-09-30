@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
 import { MyMaskUtil } from '../models/mask-utils';
 import { VoucherDetails } from '../models/voucher-details';
+import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class InvalidSpeechComponent implements OnInit {
   cpfNumberMasked: string;
   name: string;
 
-  constructor(private route: ActivatedRoute, private router: Router,
+  constructor(private modalService: DialogModalService,private route: ActivatedRoute, private router: Router,
     private shareService: ShareService) { }
 
   ngOnInit(): void {
@@ -35,6 +36,9 @@ export class InvalidSpeechComponent implements OnInit {
 
     this.voucherDetails = this.shareService.getVoucherDetails();
     this.voucherNumber = this.voucherDetails?.codigo;
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
   }
 
   navigateNext(): void {

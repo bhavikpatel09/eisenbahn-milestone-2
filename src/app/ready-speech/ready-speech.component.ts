@@ -52,6 +52,9 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
       console.log(this.blobUrl);
       this.processRecordedFileData(data);
     });
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
   }
 
 

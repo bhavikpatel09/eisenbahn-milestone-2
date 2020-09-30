@@ -4,6 +4,8 @@ import { AudioRecordingService } from '../services/audio-recording.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GoogleSpeechApiService } from '../services/google-speech-api.service';
+import { DialogModalService } from '../services/dialog-modal.service';
+import { ShareService } from '../services/share.service';
 
 @Component({
   selector: 'app-practice-speech',
@@ -21,6 +23,7 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
   isProcessing = false;
 
   constructor(
+    private modalService: DialogModalService, private shareService: ShareService,
     private googleSpeechApiService: GoogleSpeechApiService,
     private audioRecordingService: AudioRecordingService,
     private sanitizer: DomSanitizer,
@@ -42,6 +45,9 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
       console.log(this.blobUrl);
       this.processRecordedFileData(data);
     });
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
   }
 
 

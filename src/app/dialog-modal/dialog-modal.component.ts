@@ -9,6 +9,7 @@ import { DialogModalService } from '../services/dialog-modal.service';
 export class DialogModalComponent implements OnInit {
 
   @Input() title: string;
+  @Input() acceptpolicy = false;
   @Input() id: string;
   private element: any;
 
@@ -50,7 +51,7 @@ export class DialogModalComponent implements OnInit {
   // open modal
   open(): void {
     let backDropDivElem = document.getElementById("backDropDiv");
-    if (backDropDivElem) {
+    if (backDropDivElem && !this.acceptpolicy) {
       backDropDivElem.className = 'modal-backdrop fade show'; //["modal-backdrop","fade","show"]
     }
     //this.element.classList.add('modal fade show');
