@@ -5,7 +5,8 @@
     <div class="form-group">
       <label class="control-label color-o">fala de onde?</label>
       <div class="select-wrapper">
-        <select name="selectedCity" [(ngModel)]="selectedCity" (change)="onCityChange()">
+        <select name="selectedCity" [(ngModel)]="selectedCity" (change)="onCityChange()"
+          style="font-size: 2.2rem; line-height: 2.4rem;">
           <option [ngValue]="undefined" selected="true" [disabled]="true">cidade</option>
           <option *ngFor="let city of cities" [ngValue]="city" [selected]="selectedCity==city">{{city.cityName}}
           </option>
@@ -16,14 +17,16 @@
     <div class="form-group">
       <label class="control-label color-o">lista de bares</label>
       <div class="select-wrapper">
-        <select [(ngModel)]="selectedRestaurant" name="selectedRestaurant">
+        <select [(ngModel)]="selectedRestaurant" name="selectedRestaurant" style="font-size: 2.2rem; line-height: 2.4rem;">
           <option [ngValue]="undefined" [disabled]="true">restaurante</option>
-          <option *ngFor="let restaurant of restaurants" [ngValue]="restaurant" [selected]="selectedRestaurant==restaurant">{{restaurant.restaurantName}}
+          <option *ngFor="let restaurant of restaurants" [ngValue]="restaurant"
+            [selected]="selectedRestaurant==restaurant">{{restaurant.restaurantName}}
           </option>
         </select>
         <img src="./assets/images/arrow-down.png" alt=""> </div>
     </div>
-    <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img src="./assets/images/next-btn.png" alt=""></button>
+    <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img
+        src="./assets/images/next-btn.png" alt=""></button>
   </form>
 </div>
 <div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>

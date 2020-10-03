@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { timeout } from 'rxjs/operators';
 import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
@@ -22,19 +23,33 @@ export class PlaySpeechComponent implements OnInit {
 
   ngOnInit(): void {
     this.audio = new Audio();
-    this.audio.src = '../../../assets/media/eisenbahn_temporary.wav';
+    // this.audio.src = '../../../assets/media/eisenbahn_temporary.wav';
+    this.audio.src = '../../../assets/media/final_audio.mp3';
+    this.audio.onended = () => {
+      this.audio.pause();
+      clearInterval(this.interval);
+      this.recordingTime = 0;
+      // console.log(this.recordingTime);
+    };
+    this.audio.onplaying = () => {
+      // this.recordingTime = 0;
+      // console.log(this.recordingTime);
+      this.recordingTime = 0;
+      this.startTimeOut();
+    };
   }
 
   playSpeech(): void {
     if (this.isPlaying()) { return; }
     this.audio.load();
     this.audio.play();
-    this.recordingTime = 0;
-    this.startTimeOut();
-
+    // setTimeout(() => {
+    // }, 3000);
   }
 
+
   isPlaying(): boolean {
+    // console.log(!this.audio.paused);
     return !this.audio.paused;
   }
 
@@ -42,6 +57,7 @@ export class PlaySpeechComponent implements OnInit {
 
     this.interval = setInterval(
       () => {
+        console.log(this.recordingTime);
         if (this.recordingTime === 4 || !this.isPlaying()) {
           clearInterval(this.interval);
           this.recordingTime = 0;
@@ -52,7 +68,6 @@ export class PlaySpeechComponent implements OnInit {
       },
       300
     );
-
   }
 
   navigateNext(): void {

@@ -269,6 +269,17 @@ button:focus, .btn:focus {
 	background-size: cover;
 	background-position: center;
 }
+.inputBg-gray {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: calc(5rem + .76rem + 2px);
+	padding: .376rem .76rem;
+	border-radius: 2rem;
+	background: url(../images/input-bg-w.png);
+	background-size: cover;
+	background-position: center;
+}
 .fControl {
 	display: block;
 	width: 100%;
@@ -284,6 +295,21 @@ button:focus, .btn:focus {
 	text-transform: uppercase;
 	text-align: center;
 }
+.red-bg-fcontrol{
+	display: block;
+	  width: 100%;
+	  height: 100%;
+	  font-size: 2.4rem;
+	  border: none;
+	  font-family: 'railroad_sans_beta_01bold';    
+	  background-color: rgba(198,0,1);
+	  background-size: cover;
+	  -webkit-text-fill-color:  rgba(198,0,1);
+	  -webkit-background-clip: text;
+	  font-weight: 900;
+	  text-transform: uppercase;
+	  text-align: center;
+  }
 .form-control {
 	display: block;
 	width: 100%;
@@ -776,7 +802,8 @@ body.tela_01, body.tela_02, body.tela_03, body.tela_04, body.tela_05, body.tela_
 	line-height: 4rem;
 }
 .select-wrapper select {
-	line-height: 6rem;
+	/* line-height: 6rem; */
+	line-height: 4rem;
 }
 .label-lg {
 	font-size: 5.7rem;
@@ -904,7 +931,7 @@ p {
 	font-size: 2.5rem;
 	line-height: 2.8rem;
 }
-.inputBg, .select-wrapper {
+.inputBg,.inputBg-gray, .select-wrapper {
 	height: calc(3rem + .76rem + 2px);
 	border-radius: 1.7rem;
 }
@@ -974,12 +1001,12 @@ p {
 	font-size: 2.2rem;
 	line-height: 2.4rem;
 }
-.inputBg, .select-wrapper {
-	height: calc(2.5rem + .76rem + 2px);
+.inputBg,.inputBg-gray, .select-wrapper {
+	height: calc(2.8rem + .76rem + 2px);
 	border-radius: 1.2rem;
 }
 .select-wrapper:before {
-	height: calc(2.5rem + .76rem + 2px);
+	height: calc(2.8rem + .76rem + 2px);
 	border-radius: 0 1.2rem 1.2rem 0;
 }
 .btn-rounded {
@@ -1070,12 +1097,12 @@ p {
 	line-height: 2.6rem;
 	font-size: 1.8rem;
 }
-.inputBg, .select-wrapper {
-	height: calc(2.5rem + .76rem + 2px);
+.inputBg,.inputBg-gray, .select-wrapper {
+	height: calc(2.8rem + .76rem + 2px);
 	border-radius: 1.2rem;
 }
 .select-wrapper:before {
-	height: calc(2.5rem + .76rem + 2px);
+	height: calc(2.8rem + .76rem + 2px);
 	border-radius: 0 1.2rem 1.2rem 0;
 	width: 20%;
 }

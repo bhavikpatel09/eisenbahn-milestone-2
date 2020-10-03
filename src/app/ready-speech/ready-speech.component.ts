@@ -151,6 +151,23 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
               else {
                 this.isProcessing = false;
                 this.apiResponse = 'Please try again!!!';
+                const voucherRequest: VoucherRequest = {
+                  consumidor: {
+                    documento: this.consumerParams?.consumer?.documento,
+                    nome: this.consumerParams?.consumer?.nome,
+                    id: this.consumerParams?.consumer?.id
+                  },
+                  cidade: {
+                    id: this.consumerParams?.city?.id,
+                    nome: this.consumerParams?.city?.nome
+                  },
+                  cliente: {
+                    id: this.consumerParams?.restaurant?.id,
+                    nome: this.consumerParams?.restaurant?.nome,
+                    cidade: this.consumerParams?.restaurant?.cidade
+                  }
+                };
+                this.postVoucherRequest(voucherRequest, false);
               }
             }, 1000);
           });

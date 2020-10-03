@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConsumerParams } from '../models/consumer-params';
+import { MyMaskUtil } from '../models/mask-utils';
 import { VoucherDetails } from '../models/voucher-details';
 import { ConsumerService } from '../services/consumer.service';
 import { DialogModalService } from '../services/dialog-modal.service';
@@ -16,6 +17,7 @@ export class InvalidCpfComponent implements OnInit {
   voucherDetails: VoucherDetails;
 
   cpfNumber: string;
+  cpfNumberMasked: string;
   constructor(private modalService: DialogModalService,
     private route: ActivatedRoute,
     private router: Router,
@@ -36,6 +38,7 @@ export class InvalidCpfComponent implements OnInit {
     this.consumerParams = this.shareService.getConsumerParams();
     if (this.consumerParams && this.consumerParams.consumer) {
       this.cpfNumber = this.consumerParams?.consumer?.documento;
+      this.cpfNumberMasked = MyMaskUtil.cpfNumberMask(this.cpfNumber);
     }
     this.voucherDetails = this.shareService.getVoucherDetails();
     // this.shareService.voucherDetails.subscribe(voucherDetails => this.voucherDetails = voucherDetails);
