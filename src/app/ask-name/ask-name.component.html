@@ -3,9 +3,9 @@
   <form action="#">
     <label class="MainTitle"><img src="./assets/images/logo.png" alt=""></label>
     <div class="form-group">
-      <label class="control-label">seu nome é?</label>
+      <label class="control-label" style="line-height: 2.8rem;">seu nome é?</label>
       <div class="inputBg">
-        <input class="fControl" type="text" [(ngModel)]="name" name="name" aria-label="nome" title="nome" placeholder="gustavo" value="">
+        <input class="fControl" type="text" [(ngModel)]="name" name="name" aria-label="nome" title="nome" placeholder="" value=""><!--gustavo-->
       </div>
     </div>
     <button type="button" (click)="navigateNext()" [disabled]="!valid()" class="btn btn-img"><img src="./assets/images/next-btn.png" alt=""></button>

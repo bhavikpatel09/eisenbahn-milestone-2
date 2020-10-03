@@ -111,7 +111,7 @@ export class MaskDirective {
   }
 
   private static mask(value: string, mask: string): string {
-    debugger
+    //debugger
       value = value.toString();
 
       let len = value.length;
