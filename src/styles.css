@@ -46,36 +46,12 @@
   text-transform: uppercase;
     font-size: 1.2rem;
 }
-.inputBg-gray {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: calc(2.8rem + .76rem + 2px);
-	padding: .376rem .76rem;
-	border-radius: 2rem;
-	background: url(assets/images/input-bg-w.png);
-	background-size: cover;
-	background-position: center;
-}
-.red-bg-fcontrol{
-  display: block;
-    width: 100%;
-    height: 100%;
-    font-size: 2.4rem;
-    border: none;
-    font-family: 'railroad_sans_beta_01bold';    
-    background-color: rgba(198,0,1);
-    background-size: cover;
-    -webkit-text-fill-color:  rgba(198,0,1);
-    -webkit-background-clip: text;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-}
-.try-again-label{
+
+
+/* .try-again-label{
   font-size: 1.1rem;
     line-height: 1.7rem;
-}
+} */
 .spacer-9{
   height: 9vh;
   clear: both;

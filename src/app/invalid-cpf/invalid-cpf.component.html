@@ -3,15 +3,15 @@
     <form>
         <div class="spacer-10"></div>
         <div class="form-group">
-            <label class="control-label color-o" style="font-size:3rem;line-height: 3.4rem;">CPF Inválido</label>
-            <label class="control-label try-again-label" style="line-height: 1.5rem;">não conseguimos encontrar sua
+            <label class="control-label color-o">CPF Inválido</label>
+            <label class="control-label try-again-label">não conseguimos encontrar sua
                 identificação</label>
             <div class="inputBg-gray">
                 <input class="red-bg-fcontrol" readonly type="text" [(ngModel)]="cpfNumberMasked" aria-label="nome"
                     name="cpfNumberMasked" title="nome" placeholder="153.789.321.23">
             </div>
         </div>
-        <label class="control-label try-again-label" style="font-size: 2rem;">Digite novamente</label>
+        <label class="control-label try-again-label">Digite novamente</label>
         <div class="spacer-9"></div>
         <button type="button" (click)="navigateBack()" class="btn btn-img"><img
                 src="./assets/images/back-btn.png" alt=""></button>

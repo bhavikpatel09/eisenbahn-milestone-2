@@ -3,11 +3,11 @@
     <div class="text-left d-flex align-items-center">
       <img src="./assets/images/product001.png" alt="" class="productimgTop" style="max-width: 45%;">
       <div class="ml-2">
-        <label class="control-label label-md color-o text-left mb-0" style="font-size: 2.4rem;">ein prosit</label>
-        <label class="control-label label-xs text-left" style="font-size:1.2rem">um brinde</label>
+        <label class="control-label label-md color-o text-left mb-0" >ein prosit</label><!--style="font-size: 2.4rem;"-->
+        <label class="control-label label-xs text-left" >um brinde</label><!--style="font-size:1.2rem"-->
       </div>
     </div>
-    <label class="control-label label-sm productTop-tela08 mb-0" style="font-size:1.2rem;">
+    <label class="control-label label-sm productTop-tela08 mb-0" ><!--style="font-size:1.2rem;"-->
       Na compra da quantidade anunciada de eisenbahn pilsen<br>
       é so apresentar o voucher e a primeira fica por nossa conta.</label>
     <small class="firstorder-tela08 mb-2" style="font-size: 0.7rem; font-family:'railroad_sans_beta_01bold'">promoção
@@ -17,16 +17,16 @@
         <input class="fControl" readonly type="text" id="nome" name="nome" aria-label="nome" title="nome"
           placeholder="GX073DC234" value="{{voucherNumber}}">
       </div>
-      <label class="control-label label-sm mt-1" style="font-size: 1.2rem;">Código para resgate do voucher</label>
+      <label class="control-label label-sm mt-1" >Código para resgate do voucher</label><!--style="font-size: 1.2rem;"-->
     </div>
-    <label class="control-label label-sm mt-1" style="font-size: 1.2rem;" *ngIf="cpfNumber"><span class="color-o m-0">nome: </span>{{name}} <span class="color-o m-0">CPF: </span>{{cpfNumberMasked}}</label>
+    <label class="control-label label-sm mt-1" *ngIf="cpfNumber"><span class="color-o m-0">nome: </span>{{name}} <span class="color-o m-0">CPF: </span>{{cpfNumberMasked}}</label><!--style="font-size: 1.2rem;" -->
       
-    <label class="control-label label-sm mt-1" style="font-size: 1.2rem;">para conhecer mais sobre nossas cervejas, <a
+    <label class="control-label label-sm mt-1" >para conhecer mais sobre nossas cervejas, <a
         href="javascript:void(0)" class="scroll-beer " (click)="scrollToElement()">clique aqui</a>
-    </label>
+    </label><!--style="font-size: 1.2rem;"-->
     <button type="button" *ngIf="false" (click)="navigateNext()" class="btn btn-img"><img
         src="./assets/images/next-btn.png" alt=""></button>
-    <span class="badge badge-light mt-5 mb-5" style="font-size: 0.7rem;line-height: 1rem;">APRECIE COM MODERAçÃo</span>
+    <span class="badge badge-light mt-5 mb-5" >APRECIE COM MODERAçÃo</span><!--style="font-size: 0.7rem;line-height: 1rem;"-->
     <div class="spacer-5"></div>
   </form>
 </div>

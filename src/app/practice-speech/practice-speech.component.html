@@ -2,9 +2,11 @@
     <div class="container-fluid text-center">
         <div class="spacer-150"></div>
         <form action="#">
-            <label class="control-label label-xs color-o" style="margin-bottom: 0.2rem;">que tal treinar antes do teste final?</label>
-            <label class="control-label" style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;">Tente dizer eisenbahn
+            <label class="control-label label-xs color-o">que tal treinar antes do teste final?</label>
+            <!--style="margin-bottom: 0.2rem;"-->
+            <label class="control-label">Tente dizer eisenbahn
                 corretamente e leve uma eisenbahn pilsen 600ML por nossa conta.</label>
+            <!-- style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;"-->
             <button *ngIf="!isProcessing" type="button" (mousedown)="startRecording($event)"
                 (mouseup)="stopRecording($event)" (touchstart)="startRecording($event)"
                 (touchend)="stopRecording($event)" class="btn btn-img mb-2 mt-2 btn-record">
@@ -17,20 +19,23 @@
                 <div></div>
             </div>
 
-            <label class="control-label mb-1" style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;">pressione e segure para falar</label>
+            <label class="control-label mb-1">pressione e segure para falar</label>
+            <!-- style="font-size: 1.1rem;line-height: 1.1rem;margin-bottom: 0.2rem;"-->
 
-            <label class="control-label label-xs color-o" style="font-size: 1.5rem;line-height: 2rem;"
-                *ngIf="apiResponse != ''">você disse: </label><label *ngIf="apiResponse != ''" class="control-label label-xs color-o"
-                style="font-size: 1.5rem;">{{apiResponse}}</label>
+            <label class="control-label label-xs color-o" *ngIf="apiResponse != ''">você disse: </label>
+            <!--style="font-size: 1.5rem;line-height: 2rem;"-->
+            <label *ngIf="apiResponse != ''" class="control-label label-xs color-o">{{apiResponse}}</label>
+            <!--style="font-size: 1.5rem;"-->
             <div class="spacer-2"></div>
             <label class="control-label label-md mb-1">Ai <span class="colorDark-o">zem</span>bam</label>
             <label class="control-label label-md mb-0">EI <span class="colorDark-o">Sen</span>bahn</label>
             <img [src]="soundwave" style="max-width: 87%;" alt="" class="Soundwave">
 
-            <label class="control-label label-xs color-o" style="font-size: 1.5rem;line-height: 1.2rem;">Estou
+            <label class="control-label label-xs color-o">Estou
                 pronto!</label>
-            <button type="button" (click)="navigateNext()" class="btn btn-img mb-1"><img src="./assets/images/next-btn.png"
-                    alt=""></button>
+            <!--style="font-size: 1.5rem;line-height: 1.2rem;"-->
+            <button type="button" (click)="navigateNext()" class="btn btn-img mb-1"><img
+                    src="./assets/images/next-btn.png" alt=""></button>
         </form>
     </div>
 </div>
