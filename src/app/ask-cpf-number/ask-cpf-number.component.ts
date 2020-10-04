@@ -35,6 +35,9 @@ export class AskCpfNumberComponent implements OnInit {
   ngOnInit(): void {
     //this.shareService.getConsumerParams();//.subscribe(consumerParams => {
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     this.cpfNumber = this.consumerParams?.consumer?.documento;
     console.log("in CPF");
     console.log(this.consumerParams);
@@ -62,6 +65,7 @@ export class AskCpfNumberComponent implements OnInit {
             const resultData = result.data;
             const voucherStatus = resultData.status;
             this.consumerParams = {
+              isAgeGatePassed: this.consumerParams?.isAgeGatePassed,
               consumer: {
                 id: this.consumerParams?.consumer?.id,
                 nome: this.consumerParams?.consumer?.nome,
@@ -124,6 +128,7 @@ export class AskCpfNumberComponent implements OnInit {
         if (errorResponse.status === 204) {
           //(Obs.: Means that the document is valid but not found any voucher used/generated, keep the normal flow.)
           this.consumerParams = {
+            isAgeGatePassed: this.consumerParams?.isAgeGatePassed,
             consumer: {
               id: this.consumerParams?.consumer?.id,
               nome: this.consumerParams?.consumer?.nome,
@@ -138,6 +143,7 @@ export class AskCpfNumberComponent implements OnInit {
         }
         else if (errorResponse.status === 500) { //(Obs.: Means that the document is invalid)
           this.consumerParams = {
+            isAgeGatePassed: this.consumerParams?.isAgeGatePassed,
             consumer: {
               id: this.consumerParams?.consumer?.id,
               nome: this.consumerParams?.consumer?.nome,

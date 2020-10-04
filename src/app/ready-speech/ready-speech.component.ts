@@ -62,6 +62,9 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
     // this.shareService.consumerParams.subscribe(consumerParams => this.consumerParams = consumerParams);
     // this.shareService.voucherDetails.subscribe(voucherDetails => this.voucherDetails = voucherDetails);
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     this.voucherDetails = this.shareService.getVoucherDetails();
   }
 

@@ -14,12 +14,12 @@ export class AskNameComponent implements OnInit {
   consumerParams: ConsumerParams;
 
   constructor(private modalService: DialogModalService,
-              private route: ActivatedRoute, private router: Router,
-              private shareService: ShareService) {
-      if (!this.shareService.getPolicyAccepted()) {
-        this.modalService.open('politica-dialog-accept');
-      }
+    private route: ActivatedRoute, private router: Router,
+    private shareService: ShareService) {
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
     }
+  }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {
@@ -27,13 +27,14 @@ export class AskNameComponent implements OnInit {
     //   console.log(this.consumerParams);
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+        this.router.navigate(['age-gate']);
+    }
   }
   navigateNext(): void {
-    this.consumerParams = {
-      consumer: {
-        //id: this.consumerParams?.consumer?.id,
-        nome: this.name//this.consumerParams?.consumer?.nome,
-      }
+    this.consumerParams.consumer = {
+      //id: this.consumerParams?.consumer?.id,
+      nome: this.name//this.consumerParams?.consumer?.nome,
     };
     this.shareService.setConsumerParams(this.consumerParams);
 

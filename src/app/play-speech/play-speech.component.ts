@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { timeout } from 'rxjs/operators';
+import { ConsumerParams } from '../models/consumer-params';
 import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
@@ -14,6 +15,8 @@ export class PlaySpeechComponent implements OnInit {
   private audio: any;
   private interval: any;
   recordingTime: number;
+  consumerParams: ConsumerParams;
+
   constructor(private modalService: DialogModalService, private shareService: ShareService,
     private route: ActivatedRoute, private router: Router) {
     if (!this.shareService.getPolicyAccepted()) {
@@ -22,6 +25,11 @@ export class PlaySpeechComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
+
     this.audio = new Audio();
     // this.audio.src = '../../../assets/media/eisenbahn_temporary.wav';
     this.audio.src = '../../../assets/media/final_audio.mp3';

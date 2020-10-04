@@ -29,6 +29,9 @@ export class ReparticipateComponent implements OnInit {
     // this.shareService.voucherDetails.subscribe(voucherDetails => this.voucherDetails = voucherDetails);
 
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     if (this.consumerParams && this.consumerParams.consumer) {
       this.cpfNumber = this.consumerParams?.consumer?.documento;
     }

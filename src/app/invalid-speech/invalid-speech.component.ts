@@ -20,7 +20,7 @@ export class InvalidSpeechComponent implements OnInit {
   cpfNumberMasked: string;
   name: string;
 
-  constructor(private modalService: DialogModalService,private route: ActivatedRoute, private router: Router,
+  constructor(private modalService: DialogModalService, private route: ActivatedRoute, private router: Router,
     private shareService: ShareService) { }
 
   ngOnInit(): void {
@@ -30,6 +30,9 @@ export class InvalidSpeechComponent implements OnInit {
     //   this.voucherNumber = this.voucherDetails?.codigo;
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     this.cpfNumber = this.consumerParams?.consumer?.documento;
     this.cpfNumberMasked = MyMaskUtil.cpfNumberMask(this.cpfNumber);
     this.name = this.consumerParams?.consumer?.nome;

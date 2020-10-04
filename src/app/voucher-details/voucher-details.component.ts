@@ -38,6 +38,9 @@ export class VoucherDetailsComponent implements OnInit {
     //   this.voucherNumber = this.voucherDetails?.codigo;
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     this.cpfNumber = this.consumerParams?.consumer?.documento;
     this.name = this.consumerParams?.consumer?.nome;
     this.voucherDetails = this.shareService.getVoucherDetails();

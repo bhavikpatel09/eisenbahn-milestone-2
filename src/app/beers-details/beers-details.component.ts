@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ConsumerParams } from '../models/consumer-params';
 import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
@@ -14,6 +15,7 @@ export class BeersDetailsComponent implements OnInit, OnDestroy {
   videoLink: string;
   @Input() showBack: boolean = true;
   prevRoute: string;
+  consumerParams: ConsumerParams;
 
   constructor(private _sanitizer: DomSanitizer,
     private modalService: DialogModalService, private router: Router, private route: ActivatedRoute,
@@ -31,6 +33,10 @@ export class BeersDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
   }
 
   openVideoLink(link: string): void {

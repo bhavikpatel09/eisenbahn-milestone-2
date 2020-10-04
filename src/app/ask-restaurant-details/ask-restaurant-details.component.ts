@@ -14,13 +14,13 @@ import { ShareService } from '../services/share.service';
 export class AskRestaurantDetailsComponent implements OnInit {
 
   constructor(private modalService: DialogModalService,
-              private route: ActivatedRoute, private router: Router,
-              private consumerService: ConsumerService,
-              private shareService: ShareService) {
-      if (!this.shareService.getPolicyAccepted()) {
-        this.modalService.open('politica-dialog-accept');
-      }
-     }
+    private route: ActivatedRoute, private router: Router,
+    private consumerService: ConsumerService,
+    private shareService: ShareService) {
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
+  }
   cities: any[];
   restaurantList: any[];
   restaurants: any[];
@@ -31,6 +31,9 @@ export class AskRestaurantDetailsComponent implements OnInit {
   ngOnInit(): void {
     //this.shareService.consumerParams.subscribe(consumerParams => this.consumerParams = consumerParams);
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     this.loadData();
 
     // this.cities = [{ cityId: 1, cityName: 'Lisbon' },
@@ -128,6 +131,7 @@ export class AskRestaurantDetailsComponent implements OnInit {
 
   navigateNext(): void {
     this.consumerParams = {
+      isAgeGatePassed: this.consumerParams?.isAgeGatePassed,
       consumer: {
         id: this.consumerParams?.consumer?.id,
         nome: this.consumerParams?.consumer?.nome,

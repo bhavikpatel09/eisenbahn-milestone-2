@@ -18,12 +18,12 @@ export class VoucherAvailableComponent implements OnInit {
   cpfNumber: string; //= '153.143.324.21';
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private consumerService: ConsumerService,private modalService: DialogModalService,
+    private consumerService: ConsumerService, private modalService: DialogModalService,
     private shareService: ShareService) {
-      if (!this.shareService.getPolicyAccepted()) {
-        this.modalService.open('politica-dialog-accept');
-      }
-     }
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
+    }
+  }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {
@@ -33,6 +33,9 @@ export class VoucherAvailableComponent implements OnInit {
     //   }
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     if (this.consumerParams && this.consumerParams.consumer) {
       this.cpfNumber = this.consumerParams?.consumer?.documento;
     }

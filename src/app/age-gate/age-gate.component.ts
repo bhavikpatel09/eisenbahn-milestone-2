@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ConsumerParams } from '../models/consumer-params';
 import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
 
@@ -10,6 +11,9 @@ import { ShareService } from '../services/share.service';
 })
 export class AgeGateComponent implements OnInit, OnDestroy {
   showErrorMessage = false;
+
+  consumerParams: ConsumerParams;
+
   constructor(private modalService: DialogModalService, private route: ActivatedRoute,
     private router: Router, private shareService: ShareService) {
     sessionStorage.clear();
@@ -31,6 +35,13 @@ export class AgeGateComponent implements OnInit, OnDestroy {
   }
 
   navigateNext(): void {
+
+    this.consumerParams = {
+      isAgeGatePassed: true
+    };
+    this.shareService.setConsumerParams(this.consumerParams);
+
+
     //if (this.checkboxPolicy) {
     this.router.navigate(['ask-name']);
     // }

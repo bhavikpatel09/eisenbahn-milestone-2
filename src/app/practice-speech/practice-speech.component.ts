@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GoogleSpeechApiService } from '../services/google-speech-api.service';
 import { DialogModalService } from '../services/dialog-modal.service';
 import { ShareService } from '../services/share.service';
+import { ConsumerParams } from '../models/consumer-params';
 
 @Component({
   selector: 'app-practice-speech',
@@ -21,7 +22,8 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
   recordButtonImage: string = './assets/images/RecordButton.png';
   apiResponse = '';
   isProcessing = false;
-
+  consumerParams: ConsumerParams;
+  
   constructor(
     private modalService: DialogModalService, private shareService: ShareService,
     private googleSpeechApiService: GoogleSpeechApiService,
@@ -52,7 +54,10 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-
+    this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
   }
 
   processRecordedFileData(data: any): void {

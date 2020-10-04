@@ -22,11 +22,11 @@ export class InvalidCpfComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private consumerService: ConsumerService,
-    private shareService: ShareService) { 
-      if (!this.shareService.getPolicyAccepted()) {
-        this.modalService.open('politica-dialog-accept');
-      }
+    private shareService: ShareService) {
+    if (!this.shareService.getPolicyAccepted()) {
+      this.modalService.open('politica-dialog-accept');
     }
+  }
 
   ngOnInit(): void {
     // this.shareService.consumerParams.subscribe(consumerParams => {
@@ -36,6 +36,9 @@ export class InvalidCpfComponent implements OnInit {
     //   }
     // });
     this.consumerParams = this.shareService.getConsumerParams();
+    if (this.consumerParams?.isAgeGatePassed !== true) {
+      this.router.navigate(['age-gate']);
+    }
     if (this.consumerParams && this.consumerParams.consumer) {
       this.cpfNumber = this.consumerParams?.consumer?.documento;
       this.cpfNumberMasked = MyMaskUtil.cpfNumberMask(this.cpfNumber);
