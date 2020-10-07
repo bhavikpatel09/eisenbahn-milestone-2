@@ -360,6 +360,21 @@ textarea.form-control {
 	margin-left: 1rem;
 	margin-right: 1.5rem;
 }
+.control-label-age {
+	font-family: 'railroad_sans_beta_01bold';
+	background: url(../images/text-bg.jpg);
+	background-size: cover;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	font-size: 4rem;
+	display: block;
+	margin-bottom: 2rem;
+	text-align: center;
+}
+.control-label-age span {
+	margin-left: 1rem;
+	margin-right: 1.5rem;
+}
 .label-lg {
 	font-size: 5.7rem;
 	display: block;
@@ -809,6 +824,10 @@ body.tela_01, body.tela_02, body.tela_03, body.tela_04, body.tela_05, body.tela_
 	font-size: 2.7rem;
 	line-height: 3rem;
 }
+.control-label-age{
+	font-size: 2.7rem;
+	line-height: 3rem;
+}
 .fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
 	font-size: 3.7rem;
 	line-height: 4rem;
@@ -876,6 +895,10 @@ p {
 .control-label{
 	font-size: 2rem;
 	line-height: 2.7rem;
+}
+.control-label-age{
+	font-size: 2rem;
+    line-height: 2.7rem;
 }
 .fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
 	font-size: 3rem;
@@ -945,6 +968,10 @@ p {
 .control-label{
 	font-size: 1.7rem;
 	line-height: 2rem;
+}
+.control-label-age{
+	font-size: 2rem;
+    line-height: 2.7rem;
 }
  .fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
 	font-size: 2.5rem;
@@ -1020,6 +1047,10 @@ p {
 		font-size: 1.1rem;
 		line-height: 1.6rem;
 		margin-bottom: 1rem;
+	}
+	.control-label-age{
+		font-size: 2rem;
+    line-height: 2.7rem;
 	}
 	.fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
 	font-size: 2.2rem;
@@ -1118,6 +1149,10 @@ p {
 		line-height: 1.6rem;
 		margin-bottom: 0.6rem;
 	}
+	.control-label-age{
+		font-size: 2rem;
+    line-height: 2.7rem;
+	}
 	 .fControl,.red-bg-fcontrol, .btn {
 	font-size: 1.8rem;
 	line-height: 1.8rem;
@@ -1176,6 +1211,10 @@ p {
 		margin-top: -20px;
 	}
 	.control-label span {
+		margin-left: 0.7rem;
+		margin-right: 1rem;
+	}
+	.control-label-age span {
 		margin-left: 0.7rem;
 		margin-right: 1rem;
 	}

@@ -45,11 +45,12 @@ export class PlaySpeechComponent implements OnInit {
       this.recordingTime = 0;
       this.startTimeOut();
     };
+    this.audio.load();
   }
 
   playSpeech(): void {
     if (this.isPlaying()) { return; }
-    this.audio.load();
+   
     this.audio.play();
     // setTimeout(() => {
     // }, 3000);
