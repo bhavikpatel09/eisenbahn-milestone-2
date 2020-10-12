@@ -50,7 +50,7 @@ export class PlaySpeechComponent implements OnInit {
 
   playSpeech(): void {
     if (this.isPlaying()) { return; }
-   
+
     this.audio.play();
     // setTimeout(() => {
     // }, 3000);
@@ -80,6 +80,7 @@ export class PlaySpeechComponent implements OnInit {
   }
 
   navigateNext(): void {
-    this.router.navigate(['practice-speech']);
+    // this.router.navigate(['practice-speech']);
+    this.router.navigate(['ready-speech'], { queryParams: { isReady: false } });
   }
 }

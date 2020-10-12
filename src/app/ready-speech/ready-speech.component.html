@@ -1,56 +1,124 @@
-<!-- <p>ready-speech works!</p> -->
+<div *ngIf="isShowComponent">
+    <div *ngIf="!ready">
+        <div class="top-dots-bg">
+            <div class="container-fluid text-center">
+                <div class="spacer-150"></div>
+                <form action="#">
+                    <label class="control-label label-xs color-o">que tal treinar antes do teste final?</label>
+                    <label class="control-label">Tente dizer eisenbahn
+                        corretamente e leve uma eisenbahn pilsen 600ML por nossa conta.</label>
+                    <!-- <button *ngIf="!isProcessingPractice" type="button" (mousedown)="startRecordingPractice($event)"
+                        (mouseup)="stopRecordingPractice($event)" (touchstart)="startRecordingPractice($event)"
+                        (touchend)="stopRecordingPractice($event)" class="btn btn-img mb-2 mt-2 btn-record">
+                        <img [src]="getRecordButtonImagePractice()" alt=""></button> -->
+                        <div  class="pl-4 pr-4" (click)="playAudio($event)">
+                            <!-- (mousedown)="playAudio($event)" (touchstart)="playAudio($event)"-->
+                            <button type="button" #buttonPractice (onClick)="playAudio($event)" *ngIf="!isProcessingPractice" long-press 
+                                (onLongPress)="onLongPressPractice()"
+                                (onLongPressing)="onLongPressingPractice()" 
+                                (endedPress)="endedPressPractice()"
+                                class="btn btn-img mb-0 mt-0 btn-record" style="max-width: 45%;">
+                                <circle-progress [percent]="progressPractice" [radius]="40" [outerStrokeWidth]="5"
+                                    [innerStrokeWidth]="5" [space]="-5" [outerStrokeColor]="getOuterStokeColorPractice()"
+                                    [innerStrokeColor]="'#aa8b4e'" [imageSrc]="getRecordButtonImagePractice()"
+                                    [imageHeight]="44.750" [imageWidth]="29.400" [showImage]="'true'" [showBackground]="'false'"
+                                    [responsive]="true" [startFromZero]="false"></circle-progress>
+                            </button>
+                            </div>
+                    <div class="lds-ring" *ngIf="isProcessingPractice">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="text-center mb-1 mt-1">
+                        <p class="text-center error-message" *ngIf="shortTimeOccurredPractice">
+                            Tente novamente! Mantenha o botão pressionado enquanto fala
+                        </p>
+                        <!--Pressione para falar-->
+                    </div>
+                    <label class="control-label mb-1">pressione e segure para falar</label>
 
+                    <label class="control-label label-xs color-o" *ngIf="apiResponsePractice != ''">você disse: </label>
+                    <label *ngIf="apiResponsePractice != ''"
+                        class="control-label label-xs color-o">{{apiResponsePractice}}</label>
+                    <div class="spacer-2"></div>
+                    <label class="control-label label-md mb-1">Ai <span class="colorDark-o">zem</span>bam</label>
+                    <label class="control-label label-md mb-0">EI <span class="colorDark-o">Sen</span>bahn</label>
+                    <!-- <small class=color-o>{{getSoundwavePractice()}}</small> -->
+                    <img [src]="getSoundwavePractice()" style="max-width: 87%;" alt="" class="Soundwave">
 
-<div class="top-dots-bg">
-    <div class="container-fluid text-center">
-        <form action="#">
-            <img src="./assets/images/product001.png" alt="" class="productimgTop">
-            <label class="control-label label-xs productTop" >AGORA está valendo!</label><!--style="margin-bottom:0.5rem;font-size:1.6rem;"-->
-            <label class="control-label label-sm color-o">Ao pronunciar Eisenbahn,<br>
-                <span class="color-w m-0">você ganha um voucher</span><br>
-                para celebrar o mês<br>
-                das boas cervejas.</label>
-            <button type="button" *ngIf="!isProcessing" (mousedown)="startRecording($event)"
-                (mouseup)="stopRecording($event)" (touchstart)="startRecording($event)"
-                (touchend)="stopRecording($event)" class="btn btn-img mb-0 btn-record">
-                <img [src]="getRecordButtonImage()" alt=""></button>
-            <div class="lds-ring" *ngIf="isProcessing">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+                    <label class="control-label label-xs color-o">Estou
+                        pronto!</label>
+                    <button type="button" (click)="navigateNextPractice()" class="btn btn-img mb-1"><img
+                            src="./assets/images/next-btn.png" alt=""></button>
+                </form>
             </div>
+        </div>
+        <div class="bottom-bg"> <img src="./assets/images/bottom-dots.png" alt=""> </div>
 
-            <label class="control-label label-sm" >pressione e segure para falar</label> <!--style="font-size: 1.1rem;"-->
-            <label class="control-label label-md">Ai <span class="colorDark-o">zem</span>bam</label>
-            <label class="control-label label-md">EI <span class="colorDark-o">Sen</span>bahn</label>
-        </form>
+    </div>
+    <div *ngIf="ready">
+
+        <div class="top-dots-bg">
+            <div class="container-fluid text-center">
+                <form action="#" (click)="formClick()">
+                    <img src="./assets/images/product001.png" alt="" class="productimgTop">
+                    <label class="control-label label-xs productTop">AGORA está valendo!</label>
+                    <label class="control-label label-sm color-o">Ao pronunciar Eisenbahn,<br>
+                        <span class="color-w m-0">você ganha um voucher</span><br>
+                        para celebrar o mês<br>
+                        das boas cervejas.</label>
+                    <!-- <button type="button" *ngIf="!isProcessing" (mousedown)="startRecording($event)"
+                    (mouseup)="stopRecording($event)" (touchstart)="startRecording($event)"
+                    (touchend)="stopRecording($event)" class="btn btn-img mb-0 btn-record">
+                    <img [src]="getRecordButtonImage()" alt=""></button> -->
+                    <!-- <label class="control-label label-sm color-o"> longPress: {{longPress}}</label>
+                    <br>
+                    <label class="control-label label-sm color-o">longPressing: {{longPressing}}</label>
+                    <br> -->
+                    <!-- <audio autoplay #audioBeep >
+                        <source src='../../../assets/media/beep_02.mp3' type="audio/mp3"></audio> -->
+                    <!-- <circle-progress  [percent]="progress" [radius]="100" [outerStrokeWidth]="10" [innerStrokeWidth]="10"
+                            [space]="-10" [outerStrokeColor]="'#814c18'" [innerStrokeColor]="'#aa8b4e'"
+                            [imageSrc]="getRecordButtonImage()" [imageHeight]="88.750" [imageWidth]="58.400" [showImage]="'true'"
+                            [showBackground]="'false'" [responsive]="true" [startFromZero]="false"></circle-progress> -->
+                    <!-- <button (click)="playAudio($event)" class="btn btn-primary">PlayBeepSound</button> -->
+                    <div  class="pl-4 pr-4" (click)="playAudio($event)">
+                    <!-- (mousedown)="playAudio($event)" (touchstart)="playAudio($event)"-->
+                    <button type="button" #button (onClick)="playAudio($event)" *ngIf="!isProcessing" long-press (onLongPress)="onLongPress()"
+                        (onLongPressing)="onLongPressing()" (endedPress)="endedPress()"
+                        class="btn btn-img mb-0 mt-0 btn-record" style="max-width: 45%;">
+                        <circle-progress [percent]="progress" [radius]="40" [outerStrokeWidth]="5"
+                            [innerStrokeWidth]="5" [space]="-5" [outerStrokeColor]="getOuterStokeColor()"
+                            [innerStrokeColor]="'#aa8b4e'" [imageSrc]="getRecordButtonImage()"
+                            [imageHeight]="44.750" [imageWidth]="29.400" [showImage]="'true'" [showBackground]="'false'"
+                            [responsive]="true" [startFromZero]="false"></circle-progress>
+                    </button>
+                    </div>
+                    <div class="lds-ring" *ngIf="isProcessing">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+
+                    <div class="text-center mb-1 mt-1">
+                        <p class="text-center error-message" *ngIf="shortTimeOccurred">
+                            Tente novamente! Mantenha o botão pressionado enquanto fala
+                        </p>
+                        <!--Pressione para falar-->
+                    </div>
+                    <label class="control-label label-sm">pressione e segure para falar</label>
+                    <label class="control-label label-md">Ai <span class="colorDark-o">zem</span>bam</label>
+                    <label class="control-label label-md">EI <span class="colorDark-o">Sen</span>bahn</label>
+                </form>
+            </div>
+        </div>
+
+        <app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+            id="invalid-word" title="negativa">
+            <p>Desculpe!!! Você falou incorretamente!!!</p>
+        </app-dialog-modal>
     </div>
 </div>
-
-<app-dialog-modal class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-    id="invalid-word" title="negativa">
-    <p>Desculpe!!! Você falou incorretamente!!!</p>
-</app-dialog-modal>
-
-
-<!-- 
-<div class="m-5">
-    <button class="btn btn-info" *ngIf="!isRecording && !blobUrl" (click)="startRecording()">Start Recording</button>
-    <button class="btn btn-danger" *ngIf="isRecording && !blobUrl" (click)="stopRecording()">Stop Recording</button>
-    <button class="btn btn-warning" *ngIf="!isRecording && blobUrl" (click)="clearRecordedData()">Clear
-        Recording</button>
-    <br />
-    <div *ngIf="isRecording && !blobUrl"> {{recordedTime}} </div>
-    <div>
-        <br />
-        <audio *ngIf="!isRecording && blobUrl" controls>
-            <source [src]="blobUrl" type="audio/webm">
-        </audio>
-        <br /><br />
-       </div>
-    <br />
-    <h3>
-        {{apiResponse}}
-    </h3>
-</div> -->

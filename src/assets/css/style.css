@@ -441,7 +441,8 @@ select.form-control:not([size]):not([multiple]) {
 	-ms-background-clip: text;
 	-o-background-clip: text; 
 	background-clip: text;
-	font-size: 4rem;
+	font-size: 3.2rem;
+	line-height: 6rem;
 	width: 100%;
 	border: 0;
 	text-align: center;
@@ -828,9 +829,13 @@ body.tela_01, body.tela_02, body.tela_03, body.tela_04, body.tela_05, body.tela_
 	font-size: 2.7rem;
 	line-height: 3rem;
 }
-.fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
+.fControl,.red-bg-fcontrol, .btn {
 	font-size: 3.7rem;
 	line-height: 4rem;
+}
+.select-wrapper select {
+	font-size: 2.7rem;
+	line-height: 3.2rem;
 }
 .select-wrapper select {
 	line-height: 6rem;
@@ -880,6 +885,9 @@ p {
 .btn-img img {
 	max-width: 60%;
 }
+.svg-img {
+	max-width: 60%;
+}
 }
 
 @media (max-width: 767px) {
@@ -887,6 +895,9 @@ p {
 	max-width: 70%;
 }
 .btn-img img {
+	max-width: 60%;
+}
+svg image {
 	max-width: 60%;
 }
 .ProductBox .btn-img img {
@@ -900,9 +911,13 @@ p {
 	font-size: 2rem;
     line-height: 2.7rem;
 }
-.fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
+.fControl,.red-bg-fcontrol, .btn {
 	font-size: 3rem;
 	line-height: 3.3rem;
+}
+.select-wrapper select {
+	font-size: 2.2rem;
+	line-height: 2.7rem;
 }
 .label-lg {
 	font-size: 4.8rem;
@@ -973,9 +988,13 @@ p {
 	font-size: 2rem;
     line-height: 2.7rem;
 }
- .fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
+ .fControl,.red-bg-fcontrol, .btn {
 	font-size: 2.5rem;
 	line-height: 2.8rem;
+}
+.select-wrapper select {
+	font-size: 2rem;
+	line-height: 2.5rem;
 }
 .inputBg,.inputBg-gray, .select-wrapper {
 	height: calc(3rem + .76rem + 2px);
@@ -1052,9 +1071,13 @@ p {
 		font-size: 2rem;
     line-height: 2.7rem;
 	}
-	.fControl,.red-bg-fcontrol, .btn, .select-wrapper select {
+	.fControl,.red-bg-fcontrol, .btn {
 	font-size: 2.2rem;
 	line-height: 2.4rem;
+	}
+	.select-wrapper select {
+		font-size: 1.7rem;
+		line-height: 2.6rem;
 	}
 	.inputBg,.inputBg-gray, .select-wrapper {
 		height: calc(2.5rem + .76rem + 2px);
@@ -1079,6 +1102,9 @@ p {
 	}
 	.btn-img img {
 		/* max-width: 44%; */
+		max-width: 35%;
+	}
+	svg image {
 		max-width: 35%;
 	}
 	.label-lg {
@@ -1158,7 +1184,7 @@ p {
 	line-height: 1.8rem;
 	}
 	.select-wrapper select {
-		line-height: 2.6rem;
+		line-height: 1.6rem;
 		font-size: 1.8rem;
 	}
 	.inputBg,.inputBg-gray, .select-wrapper {
@@ -1181,6 +1207,9 @@ p {
 		margin: 1rem auto 1.5rem;
 	}
 	.btn-img img {
+		max-width: 33%;
+	}
+	svg image {
 		max-width: 33%;
 	}
 	.label-lg {

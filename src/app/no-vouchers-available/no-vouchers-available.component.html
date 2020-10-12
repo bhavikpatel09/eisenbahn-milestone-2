@@ -1,0 +1,32 @@
+<div class="container-fluid text-center">
+    <form action="#">
+        <div class="text-left d-flex align-items-center">
+            <img src="./assets/images/product001.png" alt="" class="productimgTop" style="max-width: 45%;">
+            <div class="ml-2">
+                <label class="control-label label-md color-o text-left mb-0">ein prosit</label>
+                <!--style="font-size: 2.4rem;"-->
+                <!-- <label class="control-label label-xs text-left" >um brinde</label>  -->
+                <!--style="font-size:1.2rem"-->
+            </div>
+        </div>
+        <label class="control-label productTop-tela08 mb-0">
+            <!--style="font-size:1.2rem;"-->
+            Verificar disponibilidade de produto com o garçom</label>
+
+
+        <label class="control-label-cpf control-label label-md mb-2 mt-1" *ngIf="cpfNumber">CPF: {{cpfNumberMasked}}</label>
+        <!--style="font-size: 1.2rem;" -->
+        <label class="control-label label-sm mt-1">para conhecer mais sobre nossas cervejas e só assistir aos videos.
+        </label>
+        <!--style="font-size: 1.2rem;"-->
+        <button type="button" *ngIf="false" (click)="navigateNext()" class="btn btn-img"><img
+                src="./assets/images/next-btn.png" alt=""></button>
+        <span class="badge badge-light mt-5 mb-5">APRECIE COM MODERAçÃo</span>
+        <!--style="font-size: 0.7rem;line-height: 1rem;"-->
+        <div class="spacer-5"></div>
+    </form>
+</div>
+<div #myElem>
+    <app-beers-details [showBack]="false"></app-beers-details>
+</div>
+<div class="spacer-15"></div>

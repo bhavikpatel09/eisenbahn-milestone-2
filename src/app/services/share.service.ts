@@ -42,4 +42,16 @@ export class ShareService {
       return false;
     }
   }
+  setOnReadyPageFlag(): void {
+    sessionStorage.setItem('isOnReady', 'true');
+  }
+  getOnReadyPageFlag(): boolean {
+    const val = sessionStorage.getItem('isOnReady');
+    if (val !== undefined && val === 'true') {
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

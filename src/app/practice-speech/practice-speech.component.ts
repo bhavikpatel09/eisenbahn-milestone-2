@@ -15,37 +15,37 @@ import { ConsumerParams } from '../models/consumer-params';
 })
 export class PracticeSpeechComponent implements OnInit, OnDestroy {
 
-  isRecording = false;
-  recordedTime: any;
-  blobUrl: any;
-  soundwave: string = './assets/images/Soundwave.png';
-  recordButtonImage: string = './assets/images/RecordButton.png';
-  apiResponse = '';
-  isProcessing = false;
+  isRecordingPractice = false;
+  recordedTimePractice: any;
+  blobUrlPractice: any;
+  soundwavePractice: string = './assets/images/Soundwave.png';
+  recordButtonImagePractice: string = './assets/images/RecordButton.png';
+  apiResponsePractice = '';
+  isProcessingPractice = false;
   consumerParams: ConsumerParams;
   
   constructor(
     private modalService: DialogModalService, private shareService: ShareService,
     private googleSpeechApiService: GoogleSpeechApiService,
-    private audioRecordingService: AudioRecordingService,
+    private audioRecordingServicePractice: AudioRecordingService,
     private sanitizer: DomSanitizer,
     private route: ActivatedRoute, private router: Router
   ) {
 
-    this.audioRecordingService.recordingFailed().subscribe(() => {
+    this.audioRecordingServicePractice.recordingFailed().subscribe(() => {
       console.log("Failed Recording");
-      this.isRecording = false;
+      this.isRecordingPractice = false;
     });
 
-    this.audioRecordingService.getRecordedTime().subscribe((time) => {
-      this.recordedTime = time;
+    this.audioRecordingServicePractice.getRecordedTime().subscribe((time) => {
+      this.recordedTimePractice = time;
     });
 
-    this.audioRecordingService.getRecordedBlob().subscribe((data) => {
+    this.audioRecordingServicePractice.getRecordedBlob().subscribe((dataPractice) => {
       console.log("Getting Recorded Blob");
-      this.blobUrl = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(data.blob));
-      console.log(this.blobUrl);
-      this.processRecordedFileData(data);
+      this.blobUrlPractice = this.sanitizer.bypassSecurityTrustUrl(URL.createObjectURL(dataPractice.blob));
+      console.log(this.blobUrlPractice);
+      this.processRecordedFileDataPractice(dataPractice);
     });
     if (!this.shareService.getPolicyAccepted()) {
       this.modalService.open('politica-dialog-accept');
@@ -60,38 +60,39 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
     }
   }
 
-  processRecordedFileData(data: any): void {
-    this.isProcessing = true;
-    if (data != null) {
-      console.log(data.blob);
-      console.log(data.title);
+  processRecordedFileDataPractice(dataPractice: any): void {
+    this.isProcessingPractice = true;
+    if (dataPractice != null) {
+      console.log(dataPractice.blob);
+      console.log(dataPractice.title);
 
-      new Response(data.blob).arrayBuffer()
-        .then((byteArray) => {
+      new Response(dataPractice.blob).arrayBuffer()
+        .then((byteArrayPractice) => {
           this.googleSpeechApiService.postSpeechRecognision({
             config: {
               languageCode: 'de-DE',
               audio_channel_count: 2,
             },
             audio: {
-              content: this.arrayBufferToBase64(byteArray)
+              content: this.arrayBufferToBase64(byteArrayPractice)
             }
-          }).subscribe((response: any) => {
+          }).subscribe((responsePractice: any) => {
             setTimeout(() => {
-              this.isProcessing = false;
-              console.log(response);
-              if (response !== undefined && response.results != null && response.results.length > 0) {
-                const responseWord = response.results[0].alternatives[0].transcript;
+              this.isProcessingPractice = false;
+              console.log("recordResponse");
+              console.log(responsePractice);
+              if (responsePractice !== undefined && responsePractice.results != null && responsePractice.results.length > 0) {
+                const responseWordPractice = responsePractice.results[0].alternatives[0].transcript;
 
-                if (responseWord === 'eisenbahn' || responseWord === 'Eisenbahn') {
-                  this.apiResponse = responseWord;
+                if (responseWordPractice === 'eisenbahn' || responseWordPractice === 'Eisenbahn') {
+                  this.apiResponsePractice = responseWordPractice;
                 }
                 else {
-                  this.apiResponse = responseWord;
+                  this.apiResponsePractice = responseWordPractice;
                 }
               }
               else {
-                this.apiResponse = '';
+                this.apiResponsePractice = '';
               }
             }, 500);
 
@@ -110,58 +111,58 @@ export class PracticeSpeechComponent implements OnInit, OnDestroy {
     return window.btoa(binary);
   }
 
-  startRecording(event): void {
-    if (event) {
-      event.preventDefault();
+  startRecordingPractice(eventPractice): void {
+    if (eventPractice) {
+      eventPractice.preventDefault();
     }
 
-    console.log("Starting Recording");
-    if (!this.isRecording) {
-      this.isRecording = true;
-      this.audioRecordingService.startRecording();
+    console.log("Starting Recording Practice");
+    if (!this.isRecordingPractice) {
+      this.isRecordingPractice = true;
+      this.audioRecordingServicePractice.startRecording();
     }
     setTimeout(() => {
-      this.soundwave = './assets/images/Soundwave.gif';
+      this.soundwavePractice = './assets/images/Soundwave.gif';
     }, 500);
 
   }
 
-  abortRecording(): void {
+  abortRecordingPractice(): void {
     console.log("Abort Recording");
-    this.soundwave = './assets/images/Soundwave.png';
-    if (this.isRecording) {
-      this.isRecording = false;
-      this.audioRecordingService.abortRecording();
+    this.soundwavePractice = './assets/images/Soundwave.png';
+    if (this.isRecordingPractice) {
+      this.isRecordingPractice = false;
+      this.audioRecordingServicePractice.abortRecording();
     }
   }
 
-  stopRecording(event): void {
+  stopRecordingPractice(event): void {
     console.log("Stopping Recording");
-    this.soundwave = './assets/images/Soundwave.png';
-    if (this.isRecording) {
-      this.audioRecordingService.stopRecording();
-      this.isRecording = false;
+    this.soundwavePractice = './assets/images/Soundwave.png';
+    if (this.isRecordingPractice) {
+      this.audioRecordingServicePractice.stopRecording();
+      this.isRecordingPractice = false;
     }
   }
 
-  clearRecordedData(): void {
-    this.soundwave = './assets/images/Soundwave.png';
+  clearRecordedDataPractice(): void {
+    this.soundwavePractice = './assets/images/Soundwave.png';
     console.log("Clear Recording");
-    this.blobUrl = null;
-    this.apiResponse = '';
+    this.blobUrlPractice = null;
+    this.apiResponsePractice = '';
   }
-  getRecordButtonImage(): string {
-    let imageSrc = './assets/images/RecordButton.png';
-    if (this.isRecording) {
-      imageSrc = './assets/images/RecordButton-Dark.png';
+  getRecordButtonImagePractice(): string {
+    let imageSrcPractice = './assets/images/RecordButton.png';
+    if (this.isRecordingPractice) {
+      imageSrcPractice = './assets/images/RecordButton-Dark.png';
     }
-    return imageSrc;
+    return imageSrcPractice;
   }
-  navigateNext(): void {
+  navigateNextPractice(): void {
     this.router.navigate(['ready-speech']);
   }
   ngOnDestroy(): void {
-    this.abortRecording();
+    this.abortRecordingPractice();
   }
 
 }

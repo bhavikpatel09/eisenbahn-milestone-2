@@ -1,0 +1,11 @@
+.control-label-cpf {
+    font-family: 'railroad_sans_beta_01bold';
+    background: #a05d1f;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    
+    display: block;
+    margin-bottom: 2rem;
+    text-align: center;
+}

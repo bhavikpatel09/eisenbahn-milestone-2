@@ -17,6 +17,7 @@ import { InvalidCpfComponent } from './invalid-cpf/invalid-cpf.component';
 import { UnusedVoucherComponent } from './unused-voucher/unused-voucher.component';
 import { VoucherAvailableComponent } from './voucher-available/voucher-available.component';
 import { VoucherErrorComponent } from './voucher-error/voucher-error.component';
+import { NoVouchersAvailableComponent } from './no-vouchers-available/no-vouchers-available.component';
 
 const routes: Routes = [
   { path: 'age-gate', component: AgeGateComponent /*, data: { animation: 'isLeft' } */ },
@@ -28,11 +29,12 @@ const routes: Routes = [
   { path: 'voucher-available', component: VoucherAvailableComponent },
   { path: 'unused-voucher', component: UnusedVoucherComponent },
   { path: 'play-speech', component: PlaySpeechComponent },
-  { path: 'practice-speech', component: PracticeSpeechComponent },
+  // { path: 'practice-speech', component: PracticeSpeechComponent },
   { path: 'ready-speech', component: ReadySpeechComponent },
   { path: 'voucher-details', component: VoucherDetailsComponent },
   { path: 'invalid-speech', component: InvalidSpeechComponent },
   { path: 'beers-details', component: BeersDetailsComponent },
+  { path: 'no-voucher-available', component: NoVouchersAvailableComponent },
   { path: 'record', component: RecordRtcComponent },
   { path: 'test-speech', component: TestSpeechComponent },
   { path: 'voucher-error', component: VoucherErrorComponent },

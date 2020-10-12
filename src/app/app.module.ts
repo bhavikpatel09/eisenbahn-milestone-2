@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RecordRtcComponent } from './record-rtc/record-rtc.component';
 import { TestSpeechComponent } from './test-speech/test-speech.component';
 import { PlaySpeechComponent } from './play-speech/play-speech.component';
-import { LongPressDirective } from './directives/long-press.directive';
+import { LongPress } from './directives/long-press.directive';
 import { BeersDetailsComponent } from './beers-details/beers-details.component';
 import { DialogModalComponent } from './dialog-modal/dialog-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -29,6 +29,9 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { VideoModalComponent } from './video-modal/video-modal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaskDirective } from './directives/mask.directive';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { NoVouchersAvailableComponent } from './no-vouchers-available/no-vouchers-available.component';
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import { MaskDirective } from './directives/mask.directive';
     RecordRtcComponent,
     TestSpeechComponent,
     PlaySpeechComponent,
-    LongPressDirective,
+    LongPress,
     BeersDetailsComponent,
     DialogModalComponent,
     InvalidSpeechComponent,
@@ -54,7 +57,8 @@ import { MaskDirective } from './directives/mask.directive';
     VoucherErrorComponent,
     VideoPlayerComponent,
     VideoModalComponent,
-    MaskDirective
+    MaskDirective,
+    NoVouchersAvailableComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +66,10 @@ import { MaskDirective } from './directives/mask.directive';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RoundProgressModule,
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

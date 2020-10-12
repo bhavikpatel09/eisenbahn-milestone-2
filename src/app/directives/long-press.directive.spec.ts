@@ -1,8 +1,8 @@
-import { LongPressDirective } from './long-press.directive';
+import { LongPress } from './long-press.directive';
 
-describe('LongPressDirective', () => {
+describe('LongPress', () => {
   it('should create an instance', () => {
-    const directive = new LongPressDirective();
+    const directive = new LongPress();
     expect(directive).toBeTruthy();
   });
 });
