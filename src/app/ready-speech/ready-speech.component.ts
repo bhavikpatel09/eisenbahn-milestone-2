@@ -448,6 +448,7 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
   postVoucherRequest(voucherRequest: VoucherRequest, isSuccess: boolean): void {
     this.consumerService.postRequestVoucher(voucherRequest).subscribe(result => {
       //success
+      debugger;
       console.log("success post in voucher request");
       this.consumerService.validateConsumer(this.consumerParams.consumer.documento).subscribe(validateResponse => {
         console.log("success validate consumer and get voucher details");
@@ -485,8 +486,8 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
         }
       });
     },
-      response => {
-
+    (response) => {
+debugger;
         const errorResponse = response.error;
         if (errorResponse) {
           console.log("error post in voucher request: " + errorResponse.status);

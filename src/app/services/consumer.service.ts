@@ -36,17 +36,17 @@ export class ConsumerService {
 
   public getCities(): Observable<any> {
     // Add safe, URL encoded_page parameter
-    return this.httpClient.get(this.SERVICE_URI + 'public/cliente/cidades').pipe(catchError(this.handleError));
+    return this.httpClient.get(this.SERVICE_URI + 'public/cliente/cidades');//.pipe(catchError(this.handleError));
   }
 
   public getRestaurants(cityId: number): Observable<any> {
     // Add safe, URL encoded_page parameter
     const options = { params: new HttpParams({ fromString: 'cidade=' + cityId }) };
-    return this.httpClient.get(this.SERVICE_URI + 'public/clientes', options).pipe(catchError(this.handleError));
+    return this.httpClient.get(this.SERVICE_URI + 'public/clientes', options);//.pipe(catchError(this.handleError));
   }
 
   public postRequestVoucher(voucherRequest: VoucherRequest): Observable<any> {
-    return this.httpClient.post(this.SERVICE_URI + 'public/consumidor/voucher', voucherRequest).pipe(catchError(this.handleError));
+    return this.httpClient.post(this.SERVICE_URI + 'public/consumidor/voucher', voucherRequest);//.pipe(catchError(this.handleError));
   }
 
 }
