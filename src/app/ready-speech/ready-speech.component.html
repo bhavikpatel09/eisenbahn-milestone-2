@@ -11,9 +11,8 @@
                         (mouseup)="stopRecordingPractice($event)" (touchstart)="startRecordingPractice($event)"
                         (touchend)="stopRecordingPractice($event)" class="btn btn-img mb-2 mt-2 btn-record">
                         <img [src]="getRecordButtonImagePractice()" alt=""></button> -->
-                        <div  class="pl-4 pr-4" (click)="playAudio($event)">
-                            <!-- (mousedown)="playAudio($event)" (touchstart)="playAudio($event)"-->
-                            <button type="button" #buttonPractice (onClick)="playAudio($event)" *ngIf="!isProcessingPractice" long-press 
+                        <div  class="pl-4 pr-4">
+                            <button type="button" #buttonPractice *ngIf="!isProcessingPractice" long-press 
                                 (onLongPress)="onLongPressPractice()"
                                 (onLongPressing)="onLongPressingPractice()" 
                                 (endedPress)="endedPressPractice()"
@@ -84,9 +83,8 @@
                             [imageSrc]="getRecordButtonImage()" [imageHeight]="88.750" [imageWidth]="58.400" [showImage]="'true'"
                             [showBackground]="'false'" [responsive]="true" [startFromZero]="false"></circle-progress> -->
                     <!-- <button (click)="playAudio($event)" class="btn btn-primary">PlayBeepSound</button> -->
-                    <div  class="pl-4 pr-4" (click)="playAudio($event)">
-                    <!-- (mousedown)="playAudio($event)" (touchstart)="playAudio($event)"-->
-                    <button type="button" #button (onClick)="playAudio($event)" *ngIf="!isProcessing" long-press (onLongPress)="onLongPress()"
+                    <div  class="pl-4 pr-4">
+                    <button type="button" #button *ngIf="!isProcessing" long-press (onLongPress)="onLongPress()"
                         (onLongPressing)="onLongPressing()" (endedPress)="endedPress()"
                         class="btn btn-img mb-0 mt-0 btn-record" style="max-width: 45%;">
                         <circle-progress [percent]="progress" [radius]="40" [outerStrokeWidth]="5"

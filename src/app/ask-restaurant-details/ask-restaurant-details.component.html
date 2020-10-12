@@ -4,10 +4,10 @@
   <form action="#">
     <div class="form-group">
       <label class="control-label color-o">fala de onde?</label>
-      <div class="select-wrapper" style="padding-right: 21%;">
+      <div class="select-wrapper" >
         <select name="selectedCity" [(ngModel)]="selectedCity" (change)="onCityChange()">
           <!--style="font-size: 2.2rem; line-height: 2.4rem;"-->
-          <option [ngValue]="undefined" selected="true" [disabled]="true">cidade </option>
+          <option [ngValue]="undefined" selected="true" [disabled]="true">cidade</option>
           <option *ngFor="let city of cities" [ngValue]="city" [selected]="selectedCity==city">{{city.cityName}}
           </option>
         </select>
@@ -16,9 +16,9 @@
     <div class="spacer-5"></div>
     <div class="form-group">
       <label class="control-label color-o">lista de bares</label>
-      <div class="select-wrapper" style="padding-right: 21%;">
+      <div class="select-wrapper">
         <select [(ngModel)]="selectedRestaurant" name="selectedRestaurant"> <!--style="font-size: 2.2rem; line-height: 2.4rem;"-->
-          <option [ngValue]="undefined" [disabled]="true">restaurante </option>
+          <option [ngValue]="undefined" [disabled]="true">restaurante</option>
           <option *ngFor="let restaurant of restaurants" [ngValue]="restaurant"
             [selected]="selectedRestaurant==restaurant">{{restaurant.restaurantName}}
           </option>

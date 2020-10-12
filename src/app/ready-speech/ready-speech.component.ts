@@ -85,6 +85,7 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
     audio.play();
     console.log("playaudio event end");
   }
+
   constructor(
     private modalService: DialogModalService,
     private googleSpeechApiService: GoogleSpeechApiService,
@@ -250,12 +251,6 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
       // if (this.isPlaying()) { return; }
       // console.log("Beep started playing");
 
-      // this.readyRecording = true;
-      // if (!this.isRecording) {
-      //   this.audio.muted = false;
-      //   this.audio.play();
-      //   this.shortTimeOccurred = false;
-      // }
     }
     else {
       clearInterval(this.recordIntervalPractice);
@@ -283,15 +278,7 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
   }
 
   onLongPressing() {
-    //this.audio !== undefined &&
     if (this.longPressing === 1) {
-
-      // this.playAudio(null);
-      // if (this.isPlaying()) {
-      //   this.audio.pause();
-      // }
-      // this.audio.muted = false;
-      // this.audio.play();
       if (!this.isRecording) {
         this.recordedTime = 0;
         this.isRecording = true;
@@ -318,15 +305,6 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
     if (this.isLongPressed) {
 
       this.stopRecording(null);
-      // if (this.isPlaying()) { return; }
-      // console.log("Beep started playing");
-
-      // this.readyRecording = true;
-      // if (!this.isRecording) {
-      //   this.audio.muted = false;
-      //   this.audio.play();
-      //   this.shortTimeOccurred = false;
-      // }
     }
     else {
       clearInterval(this.recordInterval);
@@ -340,11 +318,11 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
 
   iAmReady(): void {
     if (this.audio !== undefined) {
-      if (this.isPlaying()) {
-        this.audio.pause();
-      }
-      this.audio.muted = true;
-      this.audio.play();
+      // if (this.isPlaying()) {
+      //   this.audio.pause();
+      // }
+      // this.audio.muted = true;
+      // this.audio.play();
     }
     this.ready = true;
   }
@@ -536,7 +514,6 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
   }
 
   startRecording(event: any): void {
-    debugger;
     if (event) {
       event.preventDefault();
     }
@@ -545,31 +522,8 @@ export class ReadySpeechComponent implements OnInit, OnDestroy {
 
     this.readyRecording = true;
     if (!this.isRecording) {
-      // if (this.isPlaying()) {
-      //   this.audio.pause();
-      // }
-      // this.audio.muted = false;
-      // this.audio.play();
       this.shortTimeOccurred = false;
     }
-    // if (!this.isRecording) {
-    //   // this.audio.play();
-    //   this.audio.muted = false;
-    //   const playedPromise = this.audio.play();
-    //   if (playedPromise) {
-    //     playedPromise.catch((e) => {
-    //       console.log(e);
-    //       if (e.name === 'NotAllowedError' || e.name === 'NotSupportedError') {
-    //         console.log(e.name);
-    //       }
-    //     }).then(() => {
-
-    //     });
-    //   }
-    // }
-    // else {
-    //   console.log("already recording");
-    // }
   }
 
   abortRecording(): void {
