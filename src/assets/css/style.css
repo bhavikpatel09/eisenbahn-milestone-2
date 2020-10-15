@@ -287,10 +287,11 @@ button:focus, .btn:focus {
 	font-size: 4rem;
 	border: none;
 	font-family: 'railroad_sans_beta_01bold';
-	background: url(../images/text-bg.jpg);
+	/* font-family: 'Helvetica Neue'; */
+	color: #c9c9c9;
+	background: none;/*url(../images/text-bg.jpg)/;
 	background-size: cover;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
+	/* -webkit-text-fill-color: transparent;*/	
 	font-weight: 900;
 	text-transform: uppercase;
 	text-align: center;
@@ -302,10 +303,13 @@ button:focus, .btn:focus {
 	  font-size: 4rem;
 	  border: none;
 	  font-family: 'railroad_sans_beta_01bold';    
-	  background-color: rgba(198,0,1);
-	  background-size: cover;
+	  /* font-family: 'Helvetica Neue'; */
+	  /* background-color: rgba(198,0,1); */
+	  color: rgba(198,0,1);
+	  background: none;
+	  /* background-size: cover;
 	  -webkit-text-fill-color:  rgba(198,0,1);
-	  -webkit-background-clip: text;
+	  -webkit-background-clip: text; */
 	  font-weight: 900;
 	  text-transform: uppercase;
 	  text-align: center;
@@ -435,8 +439,7 @@ select.form-control:not([size]):not([multiple]) {
 	color: #c9c9c9;
 	background: none;/*url(../images/text-bg.jpg)/;
 	background-size: cover;
-	/* -webkit-text-fill-color: transparent;*/
-	
+	/* -webkit-text-fill-color: transparent;*/	
 	font-size: 3.2rem;
 	line-height: 6rem;
 	width: 100%;
